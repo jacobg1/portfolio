@@ -11,8 +11,33 @@ const gatsbyRequiredRules = path.join(
 );
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Jacob Greenwald's Portfolio`,
+    description:
+      "A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I use insight, imagination and coding fundamentals to create success by drawing on my dedication, persistence and passion for web development",
+    keywords: [
+      "Jacob Greenwald",
+      "Portfolio",
+      "Software Engineer",
+      "Typescript",
+    ],
+    siteUrl: `https://jacob-greenwald.com`,
+    navLinks: [
+      {
+        text: "Projects",
+        destination: "/projects",
+        newTab: false,
+      },
+      {
+        text: "Github",
+        destination: "https://github.com/jacobg1",
+        newTab: true,
+      },
+      {
+        text: "LinkedIn",
+        destination: "https://www.linkedin.com/in/jacob-greenwald-developer/",
+        newTab: true,
+      },
+    ],
   },
   plugins: [
     "gatsby-plugin-emotion",
