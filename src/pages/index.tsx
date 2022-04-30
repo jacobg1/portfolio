@@ -125,7 +125,6 @@ const links = [
   },
 ];
 
-// markup
 const IndexPage = (): JSX.Element => {
   return (
     <main style={pageStyles}>
