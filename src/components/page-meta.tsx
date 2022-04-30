@@ -23,20 +23,7 @@ const PageMeta: React.FC<PageMetaProps> = ({ metaDescription, metaTitle }) => {
     site: {
       siteMetadata: { title, description, keywords, siteUrl },
     },
-  } = useStaticQuery<SiteMetadata>(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-            siteUrl
-          }
-        }
-      }
-    `
-  );
+  } = useStaticQuery<SiteMetadata>(query);
 
   return (
     <Helmet
@@ -61,5 +48,18 @@ const PageMeta: React.FC<PageMetaProps> = ({ metaDescription, metaTitle }) => {
     />
   );
 };
+
+const query = graphql`
+  query PageMeta {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+        siteUrl
+      }
+    }
+  }
+`;
 
 export default PageMeta;
