@@ -3,36 +3,68 @@ import { PageMeta } from "../components/page-meta";
 import { Page } from "../components/page";
 import { graphql, PageProps } from "gatsby";
 
-type PageData = {
-  markdownRemark: {
+interface Item {
+  node: {
+    id: string;
     html: string;
     frontmatter: {
-      page: string;
+      title: string;
+      app: string;
+      repo: string;
     };
+  };
+}
+
+type PageData = {
+  allMarkdownRemark: {
+    edges: Item[];
   };
 };
 
 const ProjectsPage: React.FC<PageProps<PageData>> = ({
   data: {
-    markdownRemark: { html },
+    allMarkdownRemark: { edges },
   },
 }) => {
+  console.log(edges);
   return (
     <Page>
       <PageMeta metaTitle="Projects page" />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
+      {edges.map(
+        ({
+          node: {
+            id,
+            html,
+            frontmatter: { title },
+          },
+        }) => (
+          <div key={`project-${id}`}>
+            <h2>{title}</h2>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+        )
+      )}
     </Page>
   );
 };
 
 export const pageQuery = graphql`
   query Projects {
-    markdownRemark(frontmatter: { page: { eq: "projects" } }) {
-      frontmatter {
-        page
+    allMarkdownRemark(filter: { fields: { collection: { eq: "projects" } } }) {
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            app
+            repo
+          }
+        }
       }
-      html
     }
   }
 `;
+
 export default ProjectsPage;
