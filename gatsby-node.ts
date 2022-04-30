@@ -1,6 +1,11 @@
+import { GatsbyNode } from "gatsby";
 import { get } from "lodash";
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
+  node,
+  actions,
+  getNode,
+}) => {
   const { createNodeField } = actions;
 
   if (get(node, "internal.type") === `MarkdownRemark`) {
