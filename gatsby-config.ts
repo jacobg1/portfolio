@@ -69,6 +69,14 @@ const config: GatsbyConfig = {
         exclude: ["node_modules", "bower_components", ".cache", "public"],
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    "gatsby-transformer-remark",
   ],
 };
 
