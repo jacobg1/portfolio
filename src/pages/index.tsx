@@ -1,13 +1,13 @@
 import * as React from "react";
-import PageMeta from "../components/page-meta";
+import { PageMeta } from "../components/page-meta";
+import { Page } from "../components/page";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <main>
+    <Page>
       <PageMeta />
-      <title>Home Page</title>
       test
-    </main>
+    </Page>
   );
 };
 

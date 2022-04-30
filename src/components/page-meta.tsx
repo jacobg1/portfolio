@@ -18,7 +18,10 @@ type PageMetaProps = {
   metaDescription?: string;
 };
 
-const PageMeta: React.FC<PageMetaProps> = ({ metaDescription, metaTitle }) => {
+export const PageMeta: React.FC<PageMetaProps> = ({
+  metaDescription,
+  metaTitle,
+}) => {
   const {
     site: {
       siteMetadata: { title, description, keywords, siteUrl },
@@ -61,5 +64,3 @@ const query = graphql`
     }
   }
 `;
-
-export default PageMeta;
