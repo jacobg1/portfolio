@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 
 interface NavLinkProps {
@@ -12,8 +13,14 @@ export const NavLink: React.FC<NavLinkProps> = ({
   newTab,
 }) => {
   return (
-    <a href={destination} target={newTab ? "_blank" : "_self"} rel="noreferrer">
-      {text}
-    </a>
+    <>
+      {newTab ? (
+        <a href={destination} target={"_blank"} rel="noreferrer">
+          {text}
+        </a>
+      ) : (
+        <Link to={destination}>{text}</Link>
+      )}
+    </>
   );
 };

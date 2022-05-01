@@ -7,17 +7,22 @@ import { Content } from "../components/content";
 type PageData = {
   markdownRemark: {
     html: string;
-    frontmatter: {
-      page: string;
-    };
   };
 };
+
+export const pageQuery = graphql`
+  query HomePage {
+    markdownRemark(frontmatter: { page: { eq: "homepage" } }) {
+      html
+    }
+  }
+`;
 
 const IndexPage: React.FC<PageProps<PageData>> = ({
   data: {
     markdownRemark: { html },
   },
-}): JSX.Element => {
+}) => {
   return (
     <Page>
       <PageMeta />
@@ -25,14 +30,5 @@ const IndexPage: React.FC<PageProps<PageData>> = ({
     </Page>
   );
 };
-export const pageQuery = graphql`
-  query HomePage {
-    markdownRemark(frontmatter: { page: { eq: "homepage" } }) {
-      frontmatter {
-        page
-      }
-      html
-    }
-  }
-`;
+
 export default IndexPage;

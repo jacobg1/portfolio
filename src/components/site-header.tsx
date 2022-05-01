@@ -9,17 +9,18 @@ interface NavLinkProps {
 }
 
 type HeaderData = {
-  site: {
-    siteMetadata: {
+  markdownRemark: {
+    frontmatter: {
       navLinks: NavLinkProps[];
     };
   };
 };
 
 const query = graphql`
-  query SiteHeader {
-    site {
-      siteMetadata {
+  query MyQuery {
+    markdownRemark(frontmatter: { component: { eq: "header" } }) {
+      id
+      frontmatter {
         navLinks {
           text
           destination
@@ -32,8 +33,8 @@ const query = graphql`
 
 export const SiteHeader: React.FC = () => {
   const {
-    site: {
-      siteMetadata: { navLinks },
+    markdownRemark: {
+      frontmatter: { navLinks },
     },
   } = useStaticQuery<HeaderData>(query);
 

@@ -9,7 +9,7 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   const { createNodeField } = actions;
 
   if (get(node, "internal.type") === `MarkdownRemark`) {
-    const parent = getNode(get(node, "parent"));
+    const parent = getNode(get(node, "parent") || "");
 
     createNodeField({
       node,
