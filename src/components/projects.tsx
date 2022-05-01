@@ -3,7 +3,12 @@ import { ProjectProps } from "../types/interface";
 import { Content } from "./content";
 import { NavLink } from "./navigation";
 
-export const Project: React.FC<ProjectProps> = ({ html, title, repo, app }) => {
+export const Project = ({
+  html,
+  title,
+  repo,
+  app,
+}: ProjectProps): JSX.Element => {
   return (
     <div>
       <h2>{title}</h2>

@@ -1,5 +1,7 @@
 import * as React from "react";
 
-export const Content: React.FC<{ content: string }> = ({ content }) => {
+type ContentProps = { content: string };
+
+export const Content = ({ content }: ContentProps): JSX.Element => {
   return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };

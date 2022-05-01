@@ -1,6 +1,5 @@
 import * as React from "react";
 import { PageMeta } from "../components/page-meta";
-import { Page } from "../components/page";
 import { graphql, PageProps } from "gatsby";
 import { Content } from "../components/content";
 
@@ -18,16 +17,16 @@ export const pageQuery = graphql`
   }
 `;
 
-const IndexPage: React.FC<PageProps<PageData>> = ({
+const IndexPage = ({
   data: {
     markdownRemark: { html },
   },
-}) => {
+}: PageProps<PageData>): JSX.Element => {
   return (
-    <Page>
+    <>
       <PageMeta />
       <Content content={html} />
-    </Page>
+    </>
   );
 };
 

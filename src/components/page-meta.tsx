@@ -3,10 +3,10 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import { PageMetaProps, MetadataQuery } from "../types/interface";
 
-export const PageMeta: React.FC<PageMetaProps> = ({
+export const PageMeta = ({
   metaDescription,
   metaTitle,
-}) => {
+}: PageMetaProps): JSX.Element => {
   const {
     site: {
       siteMetadata: { title, description, keywords, siteUrl },
@@ -25,6 +25,10 @@ export const PageMeta: React.FC<PageMetaProps> = ({
         {
           name: "keywords",
           content: keywords.join(),
+        },
+        {
+          name: "meta",
+          content: "initial-scale=1, width=device-width",
         },
       ]}
       link={[

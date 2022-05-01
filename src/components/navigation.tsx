@@ -2,11 +2,11 @@ import { Link } from "gatsby";
 import * as React from "react";
 import { NavLinkProps } from "../types/interface";
 
-export const NavLink: React.FC<NavLinkProps> = ({
+export const NavLink = ({
   destination,
   text,
   newTab,
-}) => {
+}: NavLinkProps): JSX.Element => {
   return (
     <>
       {newTab ? (
@@ -20,9 +20,11 @@ export const NavLink: React.FC<NavLinkProps> = ({
   );
 };
 
-export const SiteLinks: React.FC<{ navLinks: NavLinkProps[] }> = ({
+export const SiteLinks = ({
   navLinks,
-}) => {
+}: {
+  navLinks: NavLinkProps[];
+}): JSX.Element => {
   return (
     <>
       {navLinks.map((link: NavLinkProps, i: number) => {
