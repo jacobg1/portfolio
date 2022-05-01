@@ -1,5 +1,5 @@
 ---
-component: header
+component: links
 navLinks:
   - text: Projects
     destination: /projects

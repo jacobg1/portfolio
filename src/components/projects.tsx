@@ -1,13 +1,7 @@
 import * as React from "react";
+import { ProjectProps } from "../types/interface";
 import { Content } from "./content";
-import { NavLink } from "./nav-link";
-
-interface ProjectProps {
-  html: string;
-  title: string;
-  app: string;
-  repo: string;
-}
+import { NavLink } from "./navigation";
 
 export const Project: React.FC<ProjectProps> = ({ html, title, repo, app }) => {
   return (

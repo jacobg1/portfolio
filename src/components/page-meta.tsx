@@ -1,22 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import { Helmet } from "react-helmet";
-
-type SiteMetadata = {
-  site: {
-    siteMetadata: {
-      title: string;
-      description: string;
-      keywords: string[];
-      siteUrl: string;
-    };
-  };
-};
-
-type PageMetaProps = {
-  metaTitle?: string;
-  metaDescription?: string;
-};
+import { PageMetaProps, MetadataQuery } from "../types/interface";
 
 export const PageMeta: React.FC<PageMetaProps> = ({
   metaDescription,
@@ -26,7 +11,7 @@ export const PageMeta: React.FC<PageMetaProps> = ({
     site: {
       siteMetadata: { title, description, keywords, siteUrl },
     },
-  } = useStaticQuery<SiteMetadata>(query);
+  } = useStaticQuery<MetadataQuery>(query);
 
   return (
     <Helmet

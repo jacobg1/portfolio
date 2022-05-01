@@ -1,11 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
-
-interface NavLinkProps {
-  destination: string;
-  text: string;
-  newTab: boolean;
-}
+import { NavLinkProps } from "../types/interface";
 
 export const NavLink: React.FC<NavLinkProps> = ({
   destination,
@@ -21,6 +16,18 @@ export const NavLink: React.FC<NavLinkProps> = ({
       ) : (
         <Link to={destination}>{text}</Link>
       )}
+    </>
+  );
+};
+
+export const SiteLinks: React.FC<{ navLinks: NavLinkProps[] }> = ({
+  navLinks,
+}) => {
+  return (
+    <>
+      {navLinks.map((link: NavLinkProps, i: number) => {
+        return <NavLink key={`header-link-${i}`} {...link} />;
+      })}
     </>
   );
 };

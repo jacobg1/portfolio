@@ -1,5 +1,12 @@
 import * as React from "react";
+import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
+import { SiteLinks } from "./navigation";
 
 export const SiteFooter: React.FC = () => {
-  return <footer>header</footer>;
+  const navLinks = useNavLinksQuery();
+  return (
+    <footer>
+      <SiteLinks navLinks={navLinks} />
+    </footer>
+  );
 };
