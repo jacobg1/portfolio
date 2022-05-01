@@ -1,4 +1,5 @@
-import { Link } from "gatsby";
+import { Link as InternalLink } from "gatsby-theme-material-ui";
+import Link from "@mui/material/Link";
 import * as React from "react";
 import { NavLinkProps } from "../types/interface";
 
@@ -10,11 +11,11 @@ export const NavLink = ({
   return (
     <>
       {newTab ? (
-        <a href={destination} target={"_blank"} rel="noreferrer">
+        <Link href={destination} target="_blank" rel="noreferrer">
           {text}
-        </a>
+        </Link>
       ) : (
-        <Link to={destination}>{text}</Link>
+        <InternalLink to={destination}>{text}</InternalLink>
       )}
     </>
   );

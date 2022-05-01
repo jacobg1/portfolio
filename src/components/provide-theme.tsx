@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { Page } from "./page";
 import theme from "../theme";
 

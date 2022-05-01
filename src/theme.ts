@@ -4,7 +4,9 @@ const theme = createTheme({
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
     h1: {
-      color: "red",
+      fontSize: "30px",
+      fontWeight: 500,
+      color: "#585858",
     },
   },
 });
