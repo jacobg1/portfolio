@@ -2,51 +2,26 @@ import * as React from "react";
 import { PageMeta } from "../components/page-meta";
 import { Page } from "../components/page";
 import { graphql, PageProps } from "gatsby";
+import { Project } from "../components/projects";
 
-interface Item {
+interface Node {
   node: {
     id: string;
     html: string;
-    frontmatter: {
-      title: string;
-      app: string;
-      repo: string;
-    };
+    frontmatter: Frontmatter;
   };
 }
 
-type PageData = {
-  allMarkdownRemark: {
-    edges: Item[];
-  };
+type Frontmatter = {
+  title: string;
+  app: string;
+  repo: string;
 };
 
-const ProjectsPage: React.FC<PageProps<PageData>> = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}) => {
-  console.log(edges);
-  return (
-    <Page>
-      <PageMeta metaTitle="Projects page" />
-      {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
-      {edges.map(
-        ({
-          node: {
-            id,
-            html,
-            frontmatter: { title },
-          },
-        }) => (
-          <div key={`project-${id}`}>
-            <h2>{title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </div>
-        )
-      )}
-    </Page>
-  );
+type PageData = {
+  allMarkdownRemark: {
+    edges: Node[];
+  };
 };
 
 export const pageQuery = graphql`
@@ -66,5 +41,20 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const ProjectsPage: React.FC<PageProps<PageData>> = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
+  return (
+    <Page>
+      <PageMeta metaTitle="Projects page" />
+      {edges.map(({ node: { id, html, frontmatter } }) => (
+        <Project key={`project-${id}`} html={html} {...frontmatter} />
+      ))}
+    </Page>
+  );
+};
 
 export default ProjectsPage;

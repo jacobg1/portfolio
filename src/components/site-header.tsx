@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { NavLink } from "./nav-link";
 
 interface NavLinkProps {
   text: string;
@@ -42,13 +43,5 @@ export const SiteHeader: React.FC = () => {
         return <NavLink key={`header-link-${i}`} {...link} />;
       })}
     </header>
-  );
-};
-
-const NavLink: React.FC<NavLinkProps> = ({ text, destination, newTab }) => {
-  return (
-    <a href={destination} target={newTab ? "_blank" : "_self"} rel="noreferrer">
-      {text}
-    </a>
   );
 };

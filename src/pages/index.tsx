@@ -2,6 +2,7 @@ import * as React from "react";
 import { PageMeta } from "../components/page-meta";
 import { Page } from "../components/page";
 import { graphql, PageProps } from "gatsby";
+import { Content } from "../components/content";
 
 type PageData = {
   markdownRemark: {
@@ -20,7 +21,7 @@ const IndexPage: React.FC<PageProps<PageData>> = ({
   return (
     <Page>
       <PageMeta />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Content content={html} />
     </Page>
   );
 };
