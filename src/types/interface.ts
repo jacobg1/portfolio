@@ -36,3 +36,23 @@ export interface PageMetaProps {
   metaTitle?: string;
   metaDescription?: string;
 }
+
+interface Node {
+  node: {
+    id: string;
+    html: string;
+    frontmatter: Frontmatter;
+  };
+}
+
+type Frontmatter = {
+  title: string;
+  app: string;
+  repo: string;
+};
+
+export interface PageData {
+  allMarkdownRemark: {
+    edges: Node[];
+  };
+}

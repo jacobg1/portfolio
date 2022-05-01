@@ -3,26 +3,7 @@ import { PageMeta } from "../components/page-meta";
 import { Page } from "../components/page";
 import { graphql, PageProps } from "gatsby";
 import { Project } from "../components/projects";
-
-interface Node {
-  node: {
-    id: string;
-    html: string;
-    frontmatter: Frontmatter;
-  };
-}
-
-type Frontmatter = {
-  title: string;
-  app: string;
-  repo: string;
-};
-
-type PageData = {
-  allMarkdownRemark: {
-    edges: Node[];
-  };
-};
+import { PageData } from "../types/interface";
 
 export const pageQuery = graphql`
   query Projects {
