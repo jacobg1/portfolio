@@ -104,9 +104,10 @@
   "include": [
     "./src/**/*",
     "./gatsby-node.ts",
-    "./gatsby-ssr.ts",
-    "./gatsby-browser.ts",
     "./gatsby-config.ts",
+    "gatsby-browser.ts",
+    "gatsby-ssr.ts",
+    "./theme.ts",
     "./plugins/**/*"
   ]
 }
