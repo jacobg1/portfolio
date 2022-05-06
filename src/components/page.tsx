@@ -1,25 +1,27 @@
 import * as React from "react";
-
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
-import { ThemeProvider } from "@mui/material/styles";
-import { Theme } from "@mui/material";
+import Box from "@mui/material/Box";
+import type { SxProps } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 
 type PageProps = {
   children: React.ReactNode;
-  theme: Theme;
 };
 
-export const Page = ({ children, theme }: PageProps): JSX.Element => {
+const pageStyles: SxProps = {
+  "& main": {
+    padding: "20px",
+  },
+};
+
+export const Page = ({ children }: PageProps): JSX.Element => {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
-      </ThemeProvider>
-    </>
+    <Box sx={pageStyles}>
+      <CssBaseline />
+      <SiteHeader />
+      <Box component="main">{children}</Box>
+      <SiteFooter />
+    </Box>
   );
 };
