@@ -24,13 +24,13 @@ export const pageQuery = graphql`
 
 const ProjectsPage = ({
   data: {
-    allMarkdownRemark: { edges },
+    allMarkdownRemark: { edges: projects },
   },
 }: PageProps<PageData>): JSX.Element => {
   return (
     <>
       <PageMeta metaTitle="Projects page" />
-      {edges.map(({ node: { id, html, frontmatter } }) => (
+      {projects.map(({ node: { id, html, frontmatter } }) => (
         <Project key={`project-${id}`} html={html} {...frontmatter} />
       ))}
     </>
