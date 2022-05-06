@@ -19,13 +19,13 @@ export interface ProjectProps {
   repo: string;
 }
 
-export interface MetadataQuery {
+export interface MetadataQuery<T> {
   site: {
-    siteMetadata: SiteMetadata;
+    siteMetadata: T;
   };
 }
 
-interface SiteMetadata {
+export interface SiteMetadata {
   title: string;
   description: string;
   keywords: string[];
