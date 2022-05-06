@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { NavLinkProps, QueryData } from "../types/interface";
+import { QueryData } from "../types/interface";
 
 const navLinksQuery = graphql`
   query NavLinksQuery {
@@ -16,12 +16,12 @@ const navLinksQuery = graphql`
   }
 `;
 
-export function useNavLinksQuery(): NavLinkProps[] {
+export function useNavLinksQuery<T>(): T {
   const {
     markdownRemark: {
       frontmatter: { navLinks },
     },
-  } = useStaticQuery<QueryData<NavLinkProps[]>>(navLinksQuery);
+  } = useStaticQuery<QueryData<T>>(navLinksQuery);
 
   return navLinks;
 }
