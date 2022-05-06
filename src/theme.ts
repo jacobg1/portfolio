@@ -1,12 +1,17 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
     h1: {
-      fontSize: "30px",
+      fontSize: "23px",
       fontWeight: 500,
-      color: "#585858",
+      color: "#ffffff",
+    },
+    h2: {
+      fontSize: "18px",
+      color: "#000000",
+      fontWeight: 500,
     },
   },
 });
