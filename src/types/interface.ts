@@ -1,22 +1,25 @@
-export interface NavLinkProps {
+
+export interface NavLinkItem {
   text: string;
   destination: string;
   newTab: boolean;
 }
 
+export interface NavLinkList {
+  navLinks: NavLinkItem[]
+}
+
+export interface MobileHeaderProps extends NavLinkList {
+  isOpen: boolean;
+  onClick: () => void;
+}
+
 export interface QueryData<T> {
   markdownRemark: {
     frontmatter: {
-      [k: string]: T;
+      [key: string]: T;
     };
   };
-}
-
-export interface ProjectProps {
-  html: string;
-  title: string;
-  app: string;
-  repo: string;
 }
 
 export interface MetadataQuery<T> {
@@ -24,6 +27,35 @@ export interface MetadataQuery<T> {
     siteMetadata: T;
   };
 }
+
+type ProjectContent = {
+  title: string;
+  app: string;
+  repo: string;
+};
+
+interface Html {
+  html: string
+}
+
+interface Node extends Html {
+  id: string;
+  frontmatter: ProjectContent;
+}
+
+type Edge = {
+  node: Node
+}
+
+export interface CollectionData {
+  allMarkdownRemark: {
+    edges: Edge[]
+  };
+}
+
+export type PageData = {
+  markdownRemark: Html
+};
 
 export interface SiteMetadata {
   title: string;
@@ -37,22 +69,8 @@ export interface PageMetaProps {
   metaDescription?: string;
 }
 
-interface Node {
-  node: {
-    id: string;
-    html: string;
-    frontmatter: Frontmatter;
-  };
-}
-
-type Frontmatter = {
+export interface ProjectProps extends Html {
   title: string;
   app: string;
   repo: string;
-};
-
-export interface PageData {
-  allMarkdownRemark: {
-    edges: Node[];
-  };
 }
