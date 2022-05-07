@@ -8,7 +8,11 @@ import DensityMediumSharpIcon from "@mui/icons-material/DensityMediumSharp";
 import { SiteLinks } from "./navigation";
 import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
 import type { SxProps } from "@mui/material";
-import { NavLinkProps } from "../types/interface";
+import {
+  NavLinkItem,
+  NavLinkList,
+  MobileHeaderProps,
+} from "../types/interface";
 
 const appBarStyles: SxProps = {
   backgroundColor: "#dddbd9",
@@ -32,7 +36,7 @@ const appBarStyles: SxProps = {
 };
 
 export const SiteHeader = (): JSX.Element => {
-  const navLinks = useNavLinksQuery<NavLinkProps[]>();
+  const navLinks = useNavLinksQuery<NavLinkItem[]>();
   const [isOpen, setOpen] = useState(false);
   const clickHandler = (open: boolean): void => setOpen(open);
 
@@ -51,7 +55,7 @@ export const SiteHeader = (): JSX.Element => {
         className="menu-button"
         size="large"
         edge="end"
-        color="inherit"
+        color="default"
         aria-label="menu"
         onClick={(): void => clickHandler(true)}
       >
@@ -61,22 +65,13 @@ export const SiteHeader = (): JSX.Element => {
   );
 };
 
-interface NavLinks {
-  navLinks: NavLinkProps[];
-}
-
-const DesktopHeader = ({ navLinks }: NavLinks): JSX.Element => {
+const DesktopHeader = ({ navLinks }: NavLinkList): JSX.Element => {
   return (
     <Box className="desktop-header">
       <SiteLinks navLinks={navLinks} />
     </Box>
   );
 };
-
-interface MobileHeaderProps extends NavLinks {
-  isOpen: boolean;
-  onClick: () => void;
-}
 
 const MobileHeader = ({
   navLinks,

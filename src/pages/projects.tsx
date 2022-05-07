@@ -2,7 +2,8 @@ import * as React from "react";
 import { PageMeta } from "../components/page-meta";
 import { graphql, PageProps } from "gatsby";
 import { Project } from "../components/projects";
-import { PageData } from "../types/interface";
+import { CollectionData } from "../types/interface";
+import { Typography } from "@mui/material";
 
 export const pageQuery = graphql`
   query Projects {
@@ -26,10 +27,11 @@ const ProjectsPage = ({
   data: {
     allMarkdownRemark: { edges: projects },
   },
-}: PageProps<PageData>): JSX.Element => {
+}: PageProps<CollectionData>): JSX.Element => {
   return (
     <>
-      <PageMeta metaTitle="Projects page" />
+      <PageMeta metaTitle="My Projects" />
+      <Typography variant="h2">My Projects</Typography>
       {projects.map(({ node: { id, html, frontmatter } }) => (
         <Project key={`project-${id}`} html={html} {...frontmatter} />
       ))}
