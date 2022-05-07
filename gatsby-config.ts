@@ -55,15 +55,15 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages-content`,
-        path: `${__dirname}/src/pages-content`,
+        name: `pages`,
+        path: `${__dirname}/src/content/pages`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects`,
+        path: `${__dirname}/src/content/projects`,
       },
     },
     {
