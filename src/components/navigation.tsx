@@ -1,13 +1,13 @@
 import { Link as InternalLink } from "gatsby-theme-material-ui";
 import Link from "@mui/material/Link";
 import * as React from "react";
-import { NavLinkProps } from "../types/interface";
+import { NavLinkList, NavLinkItem } from "../types/interface";
 
 export const NavLink = ({
   destination,
   text,
   newTab,
-}: NavLinkProps): JSX.Element => {
+}: NavLinkItem): JSX.Element => {
   return (
     <>
       {newTab ? (
@@ -21,14 +21,10 @@ export const NavLink = ({
   );
 };
 
-export const SiteLinks = ({
-  navLinks,
-}: {
-  navLinks: NavLinkProps[];
-}): JSX.Element => {
+export const SiteLinks = ({ navLinks }: NavLinkList): JSX.Element => {
   return (
     <>
-      {navLinks.map((link: NavLinkProps, i: number) => {
+      {navLinks.map((link: NavLinkItem, i: number) => {
         return <NavLink key={`header-link-${i}`} {...link} />;
       })}
     </>

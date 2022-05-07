@@ -13,7 +13,7 @@ export const Project = ({
 }: ProjectProps): JSX.Element => {
   return (
     <Box component="article">
-      <Typography variant="h2">{title}</Typography>
+      <Typography variant="h3">{title}</Typography>
       <NavLink text="Repo" destination={repo} newTab={true} />
       <NavLink text="App" destination={app} newTab={true} />
       <Content content={html} />

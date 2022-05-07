@@ -2,12 +2,7 @@ import * as React from "react";
 import { PageMeta } from "../components/page-meta";
 import { graphql, PageProps } from "gatsby";
 import { Content } from "../components/content";
-
-type PageData = {
-  markdownRemark: {
-    html: string;
-  };
-};
+import { PageData } from "../types/interface";
 
 export const pageQuery = graphql`
   query HomePage {
