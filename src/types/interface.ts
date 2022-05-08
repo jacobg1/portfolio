@@ -1,4 +1,3 @@
-
 export interface NavLinkItem {
   text: string;
   destination: string;
@@ -6,7 +5,7 @@ export interface NavLinkItem {
 }
 
 export interface NavLinkList {
-  navLinks: NavLinkItem[]
+  navLinks: NavLinkItem[];
 }
 
 export interface MobileHeaderProps extends NavLinkList {
@@ -35,7 +34,7 @@ type ProjectContent = {
 };
 
 interface Html {
-  html: string
+  html: string;
 }
 
 interface Node extends Html {
@@ -44,17 +43,17 @@ interface Node extends Html {
 }
 
 type Edge = {
-  node: Node
-}
+  node: Node;
+};
 
-export interface CollectionData {
-  allMarkdownRemark: {
-    edges: Edge[]
+export interface ProjectsContent {
+  projects: {
+    edges: Edge[];
   };
 }
 
 export type PageData = {
-  markdownRemark: Html
+  markdownRemark: Html;
 };
 
 export interface SiteMetadata {
@@ -73,4 +72,6 @@ export interface ProjectProps extends Html {
   title: string;
   app: string;
   repo: string;
+  value: number;
+  index: number;
 }
