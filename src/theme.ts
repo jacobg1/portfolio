@@ -19,6 +19,22 @@ const theme = createTheme({
       fontWeight: 500,
     },
   },
+  components: {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "red",
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          opacity: 1,
+        },
+      },
+    },
+  },
 });
 
 export default theme;
