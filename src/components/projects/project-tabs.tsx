@@ -21,8 +21,8 @@ export const ProjectTabs = ({
       aria-label="Project selector"
       centered
     >
-      {tabLabels.map((label, i) => (
-        <Tab key={`project-tab-${i}`} label={label.split(" ")[0]} />
+      {tabLabels.map((label) => (
+        <Tab key={`project-tab-${label}`} label={`# ${label}`} />
       ))}
     </Tabs>
   );

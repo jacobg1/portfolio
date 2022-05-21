@@ -11,7 +11,7 @@ type PageProps = {
 
 const pageStyles: SxProps = {
   "& main": {
-    padding: "20px",
+    padding: "20px 20px 100px",
   },
 };
 

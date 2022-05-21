@@ -19,9 +19,9 @@ export const ProjectsList = (): JSX.Element => {
   const tabLabels = projectList.map(
     ({
       node: {
-        frontmatter: { title },
+        frontmatter: { order },
       },
-    }) => title
+    }) => order
   );
 
   const handleChange = (_: SyntheticEvent, newValue: number): void => {
@@ -44,17 +44,15 @@ export const ProjectsList = (): JSX.Element => {
         resistance={true}
         onChangeIndex={handleChangeIndex}
       >
-        {projectList.map(
-          ({ node: { id, html: projectHtml, frontmatter } }, i) => (
-            <Project
-              key={`project-${id}`}
-              index={i}
-              value={value}
-              html={projectHtml}
-              {...frontmatter}
-            />
-          )
-        )}
+        {projectList.map(({ node: { id, html, frontmatter } }, i) => (
+          <Project
+            key={`project-${id}`}
+            index={i}
+            value={value}
+            html={html}
+            {...frontmatter}
+          />
+        ))}
       </SwipeableViews>
     </>
   );
@@ -64,6 +62,7 @@ export const projectsQuery = graphql`
   query ProjectsList {
     projects: allMarkdownRemark(
       filter: { fields: { collection: { eq: "projects" } } }
+      sort: { order: ASC, fields: frontmatter___order }
     ) {
       edges {
         node {
@@ -71,8 +70,9 @@ export const projectsQuery = graphql`
           html
           frontmatter {
             title
-            app
             repo
+            app
+            order
           }
         }
       }
