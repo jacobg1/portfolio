@@ -1,8 +1,8 @@
 ---
 component: links
 navLinks:
-  - text: Projects
-    destination: /projects
+  - text: About Me
+    destination: /about
     newTab: false
   - text: Github
     destination: https://github.com/jacobg1

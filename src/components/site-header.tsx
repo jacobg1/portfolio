@@ -19,7 +19,7 @@ const appBarStyles: SxProps = {
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
-  padding: "10px 15px",
+  padding: "17px 17px",
   "& .mobile-header, .desktop-header": {
     // display: "flex",
     // justifyContent: "space-around",
@@ -30,9 +30,21 @@ const appBarStyles: SxProps = {
   "& .mobile-header, .menu-button": {
     display: { sm: "none" },
   },
-  // "& .menu-button": {
-  //   padding: 0,
-  // },
+  "& .MuiTypography-h1": {
+    fontSize: "25px",
+    fontWeight: 500,
+    color: "#5a31ff",
+  },
+  "& .MuiTypography-body1": {
+    paddingTop: "5px",
+    fontWeight: 500,
+    // color: "#720000",
+    color: "#000000",
+  },
+  "& .MuiIconButton-root": {
+    color: "#000000",
+  },
+  // "& .MuiTabs-indicator": {},
 };
 
 export const SiteHeader = (): JSX.Element => {
@@ -42,9 +54,10 @@ export const SiteHeader = (): JSX.Element => {
 
   return (
     <AppBar sx={appBarStyles} position="static">
-      <Typography variant="h1" alignSelf="center">
-        Jacob Greenwald
-      </Typography>
+      <Box display="flex" flexDirection="column">
+        <Typography variant="h1">Jacob Greenwald</Typography>
+        <Typography component="span">Software Engineer</Typography>
+      </Box>
       <DesktopHeader navLinks={navLinks} />
       <MobileHeader
         navLinks={navLinks}

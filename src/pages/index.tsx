@@ -1,28 +1,39 @@
-import * as React from "react";
+import { default as React } from "react";
 import { PageMeta } from "../components/page-meta";
 import { graphql, PageProps } from "gatsby";
+import { ProjectsPageContent } from "../types/interface";
+import Typography from "@mui/material/Typography";
+
 import { Content } from "../components/content";
-import { PageData } from "../types/interface";
+import { ProjectsList } from "../components/projects/projects-list";
 
 export const pageQuery = graphql`
-  query HomePage {
-    markdownRemark(frontmatter: { page: { eq: "homepage" } }) {
+  query ProjectsPage {
+    content: markdownRemark(frontmatter: { page: { eq: "projects-page" } }) {
       html
+      frontmatter {
+        title
+      }
     }
   }
 `;
 
-const IndexPage = ({
+const ProjectsPage = ({
   data: {
-    markdownRemark: { html },
+    content: {
+      html: pageHtml,
+      frontmatter: { title: pageTitle },
+    },
   },
-}: PageProps<PageData>): JSX.Element => {
+}: PageProps<ProjectsPageContent>): JSX.Element => {
   return (
     <>
-      <PageMeta />
-      <Content content={html} />
+      <PageMeta metaTitle="My Projects" />
+      <Typography variant="h2">{pageTitle}</Typography>
+      <Content content={pageHtml} />
+      <ProjectsList />
     </>
   );
 };
 
-export default IndexPage;
+export default ProjectsPage;
