@@ -23,7 +23,7 @@ const theme = createTheme({
     MuiTabs: {
       styleOverrides: {
         indicator: {
-          backgroundColor: "red",
+          backgroundColor: "#5a31ff",
         },
       },
     },

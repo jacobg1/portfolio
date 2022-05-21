@@ -31,6 +31,7 @@ type ProjectContent = {
   title: string;
   app: string;
   repo: string;
+  order: number;
 };
 
 interface Html {
@@ -86,7 +87,7 @@ export interface ProjectProps extends Html {
 }
 
 export interface ProjectTabsProps {
-  tabLabels: string[];
+  tabLabels: number[];
   value: number;
   handleChange: (_: React.SyntheticEvent, newValue: number) => void;
 }
