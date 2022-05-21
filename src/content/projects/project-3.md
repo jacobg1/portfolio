@@ -1,11 +1,15 @@
 ---
-title: "Data Playground"
-repo: "https://github.com/jacobg1/space-search"
-app: "http://space-search.surge.sh/"
+title: "Stockz"
+repo: "https://github.com/jacobg1/data-playground"
+app: "https://jacob-greenwald.com/data-playground/"
 ---
 
-A search UI that pulls photos from NASA's image API. Users input search terms into the search bar and results are displayed below. Includes two different views, grid and list.
+Visualization of historic stock and crypto prices.
 
-When the user inputs a serch term and hits Go, the front end makes a call to the back end which then makes a call to NASA's image API. Results are returned the backend, procesed and sent to the front end where they are then displayed.
+Search for stock or crypto prices and view data in line graph format. Includes ability to view high, low, open and close prices. Users can hover over data points for more detailed information.
 
-The front end is built in [VueJS](https://vuejs.org/) with HTML, CSS and JavaScript. The back end is built in [express](https://expressjs.com/), a Node based JavaScript framework. Check out the Github repo for the back end [here](https://github.com/jacobg1/NasaSearch).
+Users can view stock prices from NASDAQ and NYSE stock markets. Crypto coin types include BTC, ETH, BCH, LTC and more.
+
+Data provided by [Alpha Vantage's](https://www.alphavantage.co/) API.
+
+Built in [ReactJS](https://reactjs.org/) with [D3](https://d3js.org/), [Redux](https://redux.js.org/), HTML, CSS and JavaScript.

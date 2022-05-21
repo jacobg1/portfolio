@@ -1,12 +1,10 @@
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import { ProjectTabsProps } from "../../types/interface";
+import type { SxProps } from "@mui/material";
 
-interface ProjectTabsProps {
-  tabLabels: string[];
-  value: number;
-  handleChange: (_: React.SyntheticEvent, newValue: number) => void;
-}
+const projectTabsStyle: SxProps = {};
 
 export const ProjectTabs = ({
   value,

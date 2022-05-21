@@ -46,7 +46,16 @@ type Edge = {
   node: Node;
 };
 
-export interface ProjectsContent {
+export interface ProjectsPageContent {
+  content: {
+    html: string;
+    frontmatter: {
+      title: string;
+    };
+  };
+}
+
+export interface ProjectsListContent {
   projects: {
     edges: Edge[];
   };
@@ -74,4 +83,10 @@ export interface ProjectProps extends Html {
   repo: string;
   value: number;
   index: number;
+}
+
+export interface ProjectTabsProps {
+  tabLabels: string[];
+  value: number;
+  handleChange: (_: React.SyntheticEvent, newValue: number) => void;
 }
