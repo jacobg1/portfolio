@@ -4,7 +4,6 @@ import { ProjectsListContent } from "../../types/interface";
 import { graphql, useStaticQuery } from "gatsby";
 import { Project } from "./project-single";
 import { ProjectTabs } from "./project-tabs";
-import SwipeableViews from "react-swipeable-views";
 
 // const projectStyles: SxProps = {
 //   margin: "20px 0",
@@ -28,10 +27,6 @@ export const ProjectsList = (): JSX.Element => {
     setValue(newValue);
   };
 
-  const handleChangeIndex = (index: number): void => {
-    setValue(index);
-  };
-
   return (
     <>
       <ProjectTabs
@@ -39,21 +34,15 @@ export const ProjectsList = (): JSX.Element => {
         tabLabels={tabLabels}
         handleChange={handleChange}
       />
-      <SwipeableViews
-        index={value}
-        resistance={true}
-        onChangeIndex={handleChangeIndex}
-      >
-        {projectList.map(({ node: { id, html, frontmatter } }, i) => (
-          <Project
-            key={`project-${id}`}
-            index={i}
-            value={value}
-            html={html}
-            {...frontmatter}
-          />
-        ))}
-      </SwipeableViews>
+      {projectList.map(({ node: { id, html, frontmatter } }, i) => (
+        <Project
+          key={`project-${id}`}
+          index={i}
+          value={value}
+          html={html}
+          {...frontmatter}
+        />
+      ))}
     </>
   );
 };
@@ -73,6 +62,9 @@ export const projectsQuery = graphql`
             repo
             app
             order
+            icon {
+              publicURL
+            }
           }
         }
       }

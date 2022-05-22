@@ -9,9 +9,9 @@ import { ProjectsList } from "../components/projects/projects-list";
 import type { SxProps } from "@mui/material";
 
 const projectPageStyles: SxProps = {
-  margin: "15px 0 15px",
+  margin: "10px 0 0",
   "& p": {
-    margin: "10px 0 0 0",
+    margin: "10px 0 20px",
   },
 };
 
