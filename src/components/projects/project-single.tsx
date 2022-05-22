@@ -11,11 +11,23 @@ const projectStyles: SxProps = {
   margin: "30px 0",
   "& .divider": {
     margin: "15px 0 20px",
-    border: "2px dashed #5a31fd",
+    border: "1px solid #0572e1",
   },
   "& .MuiTypography-h3": {
     marginTop: "4px",
     marginRight: "16px",
+  },
+  "& .MuiLink-root": {
+    backgroundColor: "#ffdebd",
+    padding: "5px",
+    width: "37%",
+    lineHeight: "18px",
+    border: "2px solid",
+    textAlign: "center",
+    borderRadius: "12px",
+  },
+  "& .project-links": {
+    margin: "28px 0",
   },
   img: {
     height: "28px",
@@ -40,8 +52,14 @@ export const Project = ({
         <Box component="img" src={icon.publicURL} />
       </Box>
       <Divider className="divider" />
-      <NavLink text="Repo" destination={repo} newTab={true} />
-      <NavLink text="App" destination={app} newTab={true} />
+      <Box
+        className="project-links"
+        display="flex"
+        justifyContent="space-around"
+      >
+        <NavLink text="Repo" destination={repo} newTab={true} />
+        <NavLink text="App" destination={app} newTab={true} />
+      </Box>
       <Content content={html} />
     </Box>
   );

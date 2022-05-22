@@ -16,7 +16,7 @@ const pageStyles: SxProps = {
     backgroundColor: "#f5f5f5",
     a: {
       textDecoration: "none",
-      color: "#007eff",
+      color: "#0572e1",
     },
   },
 };
