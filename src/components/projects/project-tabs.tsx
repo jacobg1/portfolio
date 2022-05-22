@@ -4,7 +4,23 @@ import Tab from "@mui/material/Tab";
 import { ProjectTabsProps } from "../../types/interface";
 import type { SxProps } from "@mui/material";
 
-const projectTabsStyle: SxProps = {};
+const projectTabsStyle: SxProps = {
+  alignItems: "center",
+  // padding: "10px",
+  // border: "2px solid #52c0ff",
+  fontWeight: 400,
+  "& .MuiTab-root": {
+    padding: 0,
+    minHeight: "32px",
+    alignItems: "center",
+    "&.Mui-selected": {
+      fontWeight: 600,
+      // border: "2px solid #5a31ff",
+      borderRadius: "12px",
+      background: "#ffdebd",
+    },
+  },
+};
 
 export const ProjectTabs = ({
   value,
@@ -13,6 +29,7 @@ export const ProjectTabs = ({
 }: ProjectTabsProps): JSX.Element => {
   return (
     <Tabs
+      sx={projectTabsStyle}
       value={value}
       onChange={handleChange}
       indicatorColor="secondary"

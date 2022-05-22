@@ -10,8 +10,14 @@ type PageProps = {
 };
 
 const pageStyles: SxProps = {
-  "& main": {
-    padding: "20px 20px 100px",
+  main: {
+    padding: "20px 20px 20px",
+    minHeight: "calc(100vh - 70px)",
+    backgroundColor: "#f5f5f5",
+    a: {
+      textDecoration: "none",
+      color: "#007eff",
+    },
   },
 };
 

@@ -32,6 +32,9 @@ type ProjectContent = {
   app: string;
   repo: string;
   order: number;
+  icon: {
+    publicURL: string;
+  };
 };
 
 interface Html {
@@ -84,6 +87,9 @@ export interface ProjectProps extends Html {
   repo: string;
   value: number;
   index: number;
+  icon: {
+    publicURL: string;
+  };
 }
 
 export interface ProjectTabsProps {

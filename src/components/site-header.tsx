@@ -15,7 +15,8 @@ import {
 } from "../types/interface";
 
 const appBarStyles: SxProps = {
-  backgroundColor: "#dddbd9",
+  // backgroundColor: "#dddbd9",
+  backgroundColor: "#ffffff",
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
@@ -30,16 +31,9 @@ const appBarStyles: SxProps = {
   "& .mobile-header, .menu-button": {
     display: { sm: "none" },
   },
-  "& .MuiTypography-h1": {
-    fontSize: "25px",
-    fontWeight: 500,
-    color: "#5a31ff",
-  },
   "& .MuiTypography-body1": {
     paddingTop: "5px",
-    fontWeight: 500,
-    // color: "#720000",
-    color: "#000000",
+    // color: "#007eff",
   },
   "& .MuiIconButton-root": {
     color: "#000000",
