@@ -3,6 +3,7 @@ title: "Concert Search"
 repo: "https://github.com/jacobg1/concert-search-2.0"
 app: "https://concert-search.com"
 order: 1
+icon: ../../images/vinyl.svg
 ---
 
 A search UI that pulls in live concert recordings from [archive.org's](https://archive.org) API.

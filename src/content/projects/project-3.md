@@ -3,6 +3,7 @@ title: "Stock Viz"
 repo: "https://github.com/jacobg1/data-playground"
 app: "https://jacob-greenwald.com/data-playground/"
 order: 2
+icon: ../../images/auto-graph.svg
 ---
 
 Visualization of historic stock and crypto prices.

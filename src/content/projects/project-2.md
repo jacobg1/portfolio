@@ -3,6 +3,7 @@ title: "Space Search"
 repo: "https://github.com/jacobg1/space-search"
 app: "http://space-search.surge.sh/"
 order: 3
+icon: ../../images/space-search.svg
 ---
 
 A search UI that pulls photos from NASA's image API. Users input search terms into the search bar and results are displayed below. Includes two different views, grid and list.
