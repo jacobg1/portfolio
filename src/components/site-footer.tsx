@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
 import { SiteLinks } from "./navigation";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import { NavLinkItem } from "../types/interface";
 
 import type { SxProps } from "@mui/material";

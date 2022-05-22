@@ -12,10 +12,12 @@ const projectTabsStyle: SxProps = {
   "& .MuiTab-root": {
     padding: 0,
     minHeight: "32px",
+    lineHeight: "1px",
     alignItems: "center",
+    minWidth: "40px",
     "&.Mui-selected": {
-      fontWeight: 600,
-      // border: "2px solid #5a31ff",
+      fontWeight: 900,
+      border: "2px solid #0572e1",
       borderRadius: "12px",
       background: "#ffdebd",
     },
@@ -39,7 +41,7 @@ export const ProjectTabs = ({
       centered
     >
       {tabLabels.map((label) => (
-        <Tab key={`project-tab-${label}`} label={`# ${label}`} />
+        <Tab key={`project-tab-${label}`} label={`${label}`} />
       ))}
     </Tabs>
   );

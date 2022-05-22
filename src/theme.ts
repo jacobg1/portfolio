@@ -11,7 +11,7 @@ const theme = createTheme({
     h1: {
       fontSize: "25px",
       fontWeight: 600,
-      color: "#5a31ff",
+      color: "#0572e1",
     },
     h2: {
       fontSize: "20px",
@@ -28,7 +28,7 @@ const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#007eff",
+          color: "#0572e1",
           textDecoration: "none",
         },
       },
