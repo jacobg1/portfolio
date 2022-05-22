@@ -9,9 +9,10 @@ const gatsbyRequiredRules = path.join(
   "utils",
   "eslint-rules"
 );
+
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Jacob Greenwald's Portfolio`,
+    title: "Jacob Greenwald's Portfolio",
     description:
       "A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I use insight, imagination and coding fundamentals to create success by drawing on my dedication, persistence and passion for web development",
     keywords: [
@@ -20,7 +21,7 @@ const config: GatsbyConfig = {
       "Software Engineer",
       "Typescript",
     ],
-    siteUrl: `https://jacob-greenwald.com`,
+    siteUrl: "https://jacob-greenwald.com",
   },
   plugins: [
     "gatsby-plugin-emotion",
@@ -53,21 +54,21 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `pages`,
+        name: "pages",
         path: `${__dirname}/src/content/pages`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `projects`,
+        name: "projects",
         path: `${__dirname}/src/content/projects`,
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
@@ -77,18 +78,25 @@ const config: GatsbyConfig = {
               rel: "noopener noreferrer",
             },
           },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+            },
+          },
+          "gatsby-remark-static-images",
         ],
       },
     },
     {
-      resolve: `gatsby-theme-material-ui`,
+      resolve: "gatsby-theme-material-ui",
       options: {
         webFontsConfig: {
           fonts: {
             google: [
               {
-                family: `Montserrat`,
-                variants: [`300`, `400`, `500`],
+                family: "Overpass",
+                variants: ["200", "300", "400", "500", "600", "700", "900"],
               },
             ],
           },
