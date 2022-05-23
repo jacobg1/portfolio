@@ -7,14 +7,15 @@ import { NavLinkItem } from "../types/interface";
 import type { SxProps } from "@mui/material";
 
 const footerStyles: SxProps = {
-  // background: "#dddbd9",
   backgroundColor: "#ffffff",
-  padding: "30px",
+  padding: "16px 17px",
   position: "absolute",
-  // height: "50px",
   display: "flex",
   justifyContent: "space-between",
   width: "100%",
+  flexDirection: "column",
+  alignItems: "center",
+  height: "175px",
 };
 
 export const SiteFooter = (): JSX.Element => {

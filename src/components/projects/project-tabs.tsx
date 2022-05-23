@@ -6,8 +6,6 @@ import type { SxProps } from "@mui/material";
 
 const projectTabsStyle: SxProps = {
   alignItems: "center",
-  // padding: "10px",
-  // border: "2px solid #52c0ff",
   fontWeight: 400,
   "& .MuiTab-root": {
     padding: 0,

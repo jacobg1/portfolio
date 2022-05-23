@@ -5,7 +5,7 @@ navLinks:
     destination: /about
     newTab: false
   - text: My Projects
-    destination: /projects
+    destination: /
     newTab: false
   - text: Github
     destination: https://github.com/jacobg1

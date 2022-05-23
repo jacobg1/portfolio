@@ -1,4 +1,4 @@
-import { default as React } from "react";
+import { default as React, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
@@ -6,6 +6,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { SiteLinks } from "../navigation";
 import type { SxProps } from "@mui/material";
 import { MobileHeaderProps } from "../../types/interface";
+import { globalHistory } from "@reach/router";
 
 const mobileHeaderStyles: SxProps = {
   height: "100%",
@@ -33,6 +34,11 @@ export const MobileHeader = ({
   isOpen,
   onClick,
 }: MobileHeaderProps): JSX.Element => {
+  useEffect(() => {
+    return globalHistory.listen(({ action }) => {
+      if (action === "PUSH") onClick();
+    });
+  }, [onClick]);
   return (
     <Drawer anchor="right" open={isOpen} onClose={onClick}>
       <Box sx={mobileHeaderStyles} className="mobile-header">

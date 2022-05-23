@@ -15,7 +15,12 @@ export const NavLink = ({
           {text}
         </Link>
       ) : (
-        <InternalLink to={destination}>{text}</InternalLink>
+        <InternalLink
+          sx={{ fontWeight: destination === location.pathname ? 900 : 400 }}
+          to={destination}
+        >
+          {text}
+        </InternalLink>
       )}
     </>
   );
