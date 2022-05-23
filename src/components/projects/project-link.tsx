@@ -11,14 +11,8 @@ interface ProjectLinkProps {
 }
 
 const projectLinkStyles: SxProps = {
-  // backgroundColor: "#ffdebd",
-
-  // padding: "5px",
   width: "30%",
-  // lineHeight: "18px",
-  // border: "2px solid #0572e1",
   textAlign: "center",
-  // borderRadius: "12px",
   svg: {
     width: "21px",
     fill: "#000000",

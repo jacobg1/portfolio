@@ -20,7 +20,6 @@ const appBarStyles: SxProps = {
   "& .desktop-header": {
     display: { xs: "none", sm: "flex" },
   },
-
   "& .menu-button": {
     display: { sm: "none" },
   },
