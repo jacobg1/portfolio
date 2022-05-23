@@ -4,6 +4,9 @@ navLinks:
   - text: About Me
     destination: /about
     newTab: false
+  - text: My Projects
+    destination: /projects
+    newTab: false
   - text: Github
     destination: https://github.com/jacobg1
     newTab: true

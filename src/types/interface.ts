@@ -93,7 +93,7 @@ export interface ProjectProps extends Html {
 }
 
 export interface ProjectTabsProps {
-  tabLabels: number[];
+  tabLabels: number[] | string[];
   value: number;
   handleChange: (_: React.SyntheticEvent, newValue: number) => void;
 }
