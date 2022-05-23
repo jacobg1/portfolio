@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SiteHeader } from "./site-header";
+import { SiteHeader } from "./header/site-header";
 import { SiteFooter } from "./site-footer";
 import Box from "@mui/material/Box";
 import type { SxProps } from "@mui/material";
