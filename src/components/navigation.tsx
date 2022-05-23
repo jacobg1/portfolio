@@ -1,6 +1,6 @@
+import * as React from "react";
 import { Link as InternalLink } from "gatsby-theme-material-ui";
 import Link from "@mui/material/Link";
-import * as React from "react";
 import { NavLinkList, NavLinkItem } from "../types/interface";
 
 export const NavLink = ({

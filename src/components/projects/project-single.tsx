@@ -1,11 +1,13 @@
 import * as React from "react";
 import { ProjectProps } from "../../types/interface";
 import { Content } from "../content";
-import { NavLink } from "../navigation";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import type { SxProps } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import { ProjectLink } from "./project-link";
 
 const projectStyles: SxProps = {
   margin: "30px 0",
@@ -17,17 +19,13 @@ const projectStyles: SxProps = {
     marginTop: "4px",
     marginRight: "16px",
   },
-  "& .MuiLink-root": {
-    backgroundColor: "#ffdebd",
-    padding: "5px",
-    width: "37%",
-    lineHeight: "18px",
-    border: "2px solid",
-    textAlign: "center",
-    borderRadius: "12px",
-  },
   "& .project-links": {
     margin: "28px 0",
+    display: "flex",
+    justifyContent: "space-around",
+  },
+  "& .MuiButton-root:hover": {
+    borderSize: "2px",
   },
   img: {
     height: "28px",
@@ -52,13 +50,9 @@ export const Project = ({
         <Box component="img" src={icon.publicURL} />
       </Box>
       <Divider className="divider" />
-      <Box
-        className="project-links"
-        display="flex"
-        justifyContent="space-around"
-      >
-        <NavLink text="Repo" destination={repo} newTab={true} />
-        <NavLink text="App" destination={app} newTab={true} />
+      <Box className="project-links">
+        <ProjectLink text="Repo" linkHref={repo} icon={<GitHubIcon />} />
+        <ProjectLink text="App" linkHref={app} icon={<TerminalIcon />} />
       </Box>
       <Content content={html} />
     </Box>

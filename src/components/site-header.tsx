@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
 import DensityMediumSharpIcon from "@mui/icons-material/DensityMediumSharp";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { SiteLinks } from "./navigation";
 import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
 import type { SxProps } from "@mui/material";
@@ -21,6 +22,7 @@ const appBarStyles: SxProps = {
   flexDirection: "row",
   justifyContent: "space-between",
   padding: "17px 17px",
+  borderBottom: "2px solid #0572e1",
   "& .mobile-header, .desktop-header": {
     // display: "flex",
     // justifyContent: "space-around",
@@ -28,7 +30,8 @@ const appBarStyles: SxProps = {
   "& .desktop-header": {
     display: { xs: "none", sm: "flex" },
   },
-  "& .mobile-header, .menu-button": {
+
+  "& .menu-button": {
     display: { sm: "none" },
   },
   "& .MuiTypography-body1": {
@@ -80,6 +83,27 @@ const DesktopHeader = ({ navLinks }: NavLinkList): JSX.Element => {
   );
 };
 
+const mobileHeaderStyles: SxProps = {
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  padding: "30px 20px 20px",
+  alignItems: "center",
+  backgroundColor: "#f5f5f5",
+  "& .link-holder": {
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    height: "30%",
+  },
+  svg: {
+    width: "30px",
+    height: "30px",
+  },
+};
+
 const MobileHeader = ({
   navLinks,
   isOpen,
@@ -87,8 +111,12 @@ const MobileHeader = ({
 }: MobileHeaderProps): JSX.Element => {
   return (
     <Drawer anchor="right" open={isOpen} onClose={onClick}>
-      <Box className="mobile-header">
-        <SiteLinks navLinks={navLinks} />
+      <Box sx={mobileHeaderStyles} className="mobile-header">
+        <HighlightOffIcon onClick={onClick} />
+        <Box className="link-holder">
+          <SiteLinks navLinks={navLinks} />
+        </Box>
+        <Typography variant="body1">greenwald.j8@gmail.com</Typography>
       </Box>
     </Drawer>
   );

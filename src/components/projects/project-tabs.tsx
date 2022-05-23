@@ -19,7 +19,8 @@ const projectTabsStyle: SxProps = {
       fontWeight: 900,
       border: "2px solid #0572e1",
       borderRadius: "12px",
-      background: "#ffdebd",
+      // background: "#ffdebd",
+      backgroundColor: "#ffffff",
     },
   },
 };
@@ -41,7 +42,7 @@ export const ProjectTabs = ({
       centered
     >
       {tabLabels.map((label) => (
-        <Tab key={`project-tab-${label}`} label={`${label}`} />
+        <Tab key={`project-tab-${label}`} label={`# ${label}`} />
       ))}
     </Tabs>
   );
