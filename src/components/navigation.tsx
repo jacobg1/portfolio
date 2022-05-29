@@ -8,6 +8,8 @@ export const NavLink = ({
   text,
   newTab,
 }: NavLinkItem): JSX.Element => {
+  const pathname =
+    typeof window !== "undefined" ? window.location.pathname : "/";
   return (
     <>
       {newTab ? (
@@ -16,7 +18,7 @@ export const NavLink = ({
         </Link>
       ) : (
         <InternalLink
-          sx={{ fontWeight: destination === location.pathname ? 900 : 400 }}
+          sx={{ fontWeight: destination === pathname ? 900 : 400 }}
           to={destination}
         >
           {text}
