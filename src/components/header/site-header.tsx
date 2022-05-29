@@ -11,7 +11,7 @@ import { DesktopHeader } from "./desktop-header";
 import { NavLinkItem } from "../../types/interface";
 
 const appBarStyles: SxProps = {
-  backgroundColor: "#ffffff",
+  backgroundColor: "#e7e7e7",
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",

@@ -1,13 +1,8 @@
 import { default as React, SyntheticEvent } from "react";
 import { ProjectsListContent } from "../../types/interface";
-// import type { SxProps } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 import { Project } from "./project-single";
 import { ProjectTabs } from "./project-tabs";
-
-// const projectStyles: SxProps = {
-//   margin: "20px 0",
-// };
 
 export const ProjectsList = (): JSX.Element => {
   const {

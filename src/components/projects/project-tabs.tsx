@@ -1,8 +1,8 @@
 import * as React from "react";
+import type { SxProps } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { ProjectTabsProps } from "../../types/interface";
-import type { SxProps } from "@mui/material";
 
 const projectTabsStyle: SxProps = {
   alignItems: "center",
@@ -12,15 +12,18 @@ const projectTabsStyle: SxProps = {
   "& .MuiTab-root": {
     padding: 0,
     fontSize: { md: "17px" },
-    minHeight: { xs: "32px", sm: "41px", md: "42px" },
+    minHeight: { xs: "32px", sm: "40px" },
     lineHeight: "1px",
     alignItems: "center",
     minWidth: "40px",
+    borderRadius: "33px",
+    border: "2px solid #f5f5f5",
+    "&:hover": {
+      background: "#ffffff",
+    },
     "&.Mui-selected": {
       fontWeight: 900,
       border: "2px solid #0572e1",
-      borderRadius: "4px",
-      // background: "#ffdebd",
       backgroundColor: "#ffffff",
     },
   },
@@ -28,8 +31,8 @@ const projectTabsStyle: SxProps = {
 
 export const ProjectTabs = ({
   value,
-  handleChange,
   tabLabels,
+  handleChange,
 }: ProjectTabsProps): JSX.Element => {
   return (
     <Tabs
