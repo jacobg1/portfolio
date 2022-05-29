@@ -30,7 +30,7 @@ export const SiteLinks = ({ navLinks }: NavLinkList): JSX.Element => {
   return (
     <>
       {navLinks.map((link: NavLinkItem, i: number) => {
-        return <NavLink key={`header-link-${i}`} {...link} />;
+        return <NavLink key={`site-link-${i}`} {...link} />;
       })}
     </>
   );

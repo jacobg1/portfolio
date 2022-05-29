@@ -15,7 +15,7 @@ const appBarStyles: SxProps = {
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
-  padding: "17px 17px",
+  padding: { xs: "17px", sm: "20px", md: "25px" },
   borderBottom: "2px solid #0572e1",
   "& .desktop-header": {
     display: { xs: "none", sm: "flex" },
