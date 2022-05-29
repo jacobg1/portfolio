@@ -8,10 +8,11 @@ const desktopHeaderStyles: SxProps = {
   flexDirection: "row",
   justifyContent: "space-between",
   width: "60%",
-  maxWidth: { xs: "500px", md: "650px" },
+  maxWidth: { xs: "500px", md: "600px" },
   alignSelf: "center",
   a: {
     color: "black",
+    fontSize: "17px",
   },
 };
 

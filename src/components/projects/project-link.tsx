@@ -13,8 +13,6 @@ const projectLinkStyles: SxProps = {
   width: "30%",
   textAlign: "center",
   maxWidth: "200px",
-  lineHeight: { sm: "26px" },
-  fontSize: { sm: "17px" },
   svg: {
     fill: "#000000",
     width: "21px",
@@ -29,11 +27,17 @@ const projectLinkStyles: SxProps = {
     backgroundColor: "#ffffff",
     width: "100%",
     border: "2px solid #0572e1",
-    lineHeight: "19px",
+    lineHeight: { sm: "26px" },
+    fontSize: { sm: "17px" },
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     fontWeight: 700,
+    "&:hover": {
+      background: "#ffffff",
+      boxShadow: "1px 1px 1px black",
+      textDecoration: "none",
+    },
   },
 };
 

@@ -1,9 +1,8 @@
 import { default as React, useEffect } from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { SiteLinks } from "../navigation";
+import { SiteLinks, NavLink } from "../navigation";
 import type { SxProps } from "@mui/material";
 import { MobileHeaderProps } from "../../types/interface";
 import { globalHistory } from "@reach/router";
@@ -46,7 +45,11 @@ export const MobileHeader = ({
         <Box className="link-holder">
           <SiteLinks navLinks={navLinks} />
         </Box>
-        <Typography variant="body1">greenwald.j8@gmail.com</Typography>
+        <NavLink
+          text="greenwald.j8@gmail.com"
+          destination="mailto:greenwald.j8@gmail.com"
+          newTab={false}
+        />
       </Box>
     </Drawer>
   );

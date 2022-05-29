@@ -7,7 +7,7 @@ import { NavLink, SiteLinks } from "./navigation";
 import type { SxProps } from "@mui/material";
 
 const footerStyles: SxProps = {
-  backgroundColor: "#ffffff",
+  backgroundColor: "#e7e7e7",
   padding: { xs: "16px 17px", sm: 0 },
   position: "absolute",
   width: "100%",

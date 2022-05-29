@@ -1,6 +1,4 @@
 import * as React from "react";
-import { ProjectProps } from "../../types/interface";
-import { Content } from "../content";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
@@ -8,9 +6,12 @@ import type { SxProps } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import { ProjectLink } from "./project-link";
+import { ProjectProps } from "../../types/interface";
+import { Content } from "../content";
 
 const projectStyles: SxProps = {
-  // margin: "30px 0",
+  position: "static",
+  zIndex: "1",
   "& .divider": {
     margin: "15px 0 20px",
     border: "1px solid #0572e1",
@@ -25,17 +26,14 @@ const projectStyles: SxProps = {
     margin: { xs: "28px 0", sm: "40px 0" },
     justifyContent: { xs: "space-around" },
   },
-  "& .MuiButton-root:hover": {
-    borderSize: "2px",
-  },
   img: {
-    height: "28px",
-    width: "28px",
+    height: { xs: "28px", sm: "38px" },
+    width: { xs: "28px", sm: "38px" },
     alignSelf: "center",
   },
   "& .project-container": {
-    width: { md: "65%" },
-    maxWidth: "1000px",
+    width: { lg: "65%" },
+    maxWidth: { xs: "450px", sm: "1000px" },
     margin: { xs: "auto", md: "50px auto 40px" },
   },
   "& .project-title": {
@@ -43,6 +41,9 @@ const projectStyles: SxProps = {
     alignItems: "flex-start",
     flexDirection: "row",
     justifyContent: { sm: "center" },
+  },
+  "& a:hover": {
+    textDecoration: "underline",
   },
 };
 
