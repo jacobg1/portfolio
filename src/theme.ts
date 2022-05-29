@@ -12,9 +12,7 @@ theme = createTheme({
       },
       [theme.breakpoints.up("md")]: {
         fontSize: "22px",
-        // margin: "25px 0",
       },
-      // letterSpacing: ".3px",
     },
     h1: {
       fontSize: "25px",
@@ -56,13 +54,15 @@ theme = createTheme({
         root: {
           color: "#0572e1",
           textDecoration: "none",
+          "&:hover": {
+            textDecoration: "underline",
+          },
         },
       },
     },
     MuiTabs: {
       styleOverrides: {
         indicator: {
-          // backgroundColor: "#5a31ff",
           display: "none",
         },
       },
