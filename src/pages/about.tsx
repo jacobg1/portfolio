@@ -5,8 +5,8 @@ import { Content } from "../components/content";
 import { PageData } from "../types/interface";
 
 export const pageQuery = graphql`
-  query HomePage {
-    markdownRemark(frontmatter: { page: { eq: "homepage" } }) {
+  query AboutPage {
+    markdownRemark(frontmatter: { page: { eq: "about" } }) {
       html
     }
   }
