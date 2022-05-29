@@ -1,7 +1,6 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { NavLink } from "../navigation";
 import type { SxProps } from "@mui/material";
 
 interface ProjectLinkProps {
@@ -13,9 +12,18 @@ interface ProjectLinkProps {
 const projectLinkStyles: SxProps = {
   width: "30%",
   textAlign: "center",
+  maxWidth: "200px",
+  lineHeight: { sm: "26px" },
+  fontSize: { sm: "17px" },
   svg: {
-    width: "21px",
     fill: "#000000",
+    width: "21px",
+  },
+  "& .MuiSvgIcon-root": {
+    fontSize: { sm: "23px" },
+  },
+  "& .MuiButton-startIcon": {
+    paddingBottom: "2px",
   },
   "& .MuiButton-root": {
     backgroundColor: "#ffffff",
@@ -25,10 +33,7 @@ const projectLinkStyles: SxProps = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    "& .MuiLink-root": {
-      paddingTop: "4px",
-      fontWeight: 700,
-    },
+    fontWeight: 700,
   },
 };
 
@@ -39,8 +44,13 @@ export const ProjectLink = ({
 }: ProjectLinkProps): JSX.Element => {
   return (
     <Box sx={projectLinkStyles}>
-      <Button variant="outlined" startIcon={icon}>
-        <NavLink text={text} destination={linkHref} newTab={true} />
+      <Button
+        href={linkHref}
+        target="_blank"
+        variant="outlined"
+        startIcon={icon}
+      >
+        {text}
       </Button>
     </Box>
   );

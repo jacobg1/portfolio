@@ -1,28 +1,54 @@
 import * as React from "react";
-import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
-import { SiteLinks } from "./navigation";
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { NavLinkItem } from "../types/interface";
-
+import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
+import { NavLink, SiteLinks } from "./navigation";
 import type { SxProps } from "@mui/material";
 
 const footerStyles: SxProps = {
   backgroundColor: "#ffffff",
-  padding: "16px 17px",
+  padding: { xs: "16px 17px", sm: 0 },
   position: "absolute",
-  display: "flex",
-  justifyContent: "space-between",
   width: "100%",
-  flexDirection: "column",
-  alignItems: "center",
-  height: "175px",
+  borderTop: "2px solid #0572e1",
+  "& .footer-container": {
+    display: "flex",
+    maxWidth: "700px",
+    margin: "auto",
+    height: { xs: "125px", sm: "75px" },
+    flexDirection: { xs: "column", sm: "row" },
+    justifyContent: { xs: "space-between", sm: "space-around" },
+    alignItems: "center",
+    a: {
+      color: "black",
+      fontSize: { sm: "18px" },
+    },
+  },
+  "& .email": {
+    textAlign: "center",
+    fontSize: { sm: "18px" },
+    padding: { xs: "10px 0 0", sm: "0 0 25px" },
+    a: {
+      color: "black",
+    },
+  },
 };
 
 export const SiteFooter = (): JSX.Element => {
   const navLinks = useNavLinksQuery<NavLinkItem[]>();
   return (
     <Box sx={footerStyles} component="footer">
-      <SiteLinks navLinks={navLinks} />
+      <Box className="footer-container">
+        <SiteLinks navLinks={navLinks} />
+      </Box>
+      <Typography className="email" variant="body1">
+        <NavLink
+          text="greenwald.j8@gmail.com"
+          destination="mailto:greenwald.j8@gmail.com"
+          newTab={false}
+        />
+      </Typography>
     </Box>
   );
 };
