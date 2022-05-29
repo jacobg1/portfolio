@@ -12,6 +12,6 @@ Search for stock or crypto prices and view data in line graph format. Includes a
 
 Users can view stock prices from NASDAQ and NYSE stock markets. Crypto coin types include BTC, ETH, BCH, LTC and more.
 
-Data provided by [Alpha Vantage's](https://www.alphavantage.co/) API.
+Data provided by [alpha vantage's](https://www.alphavantage.co/) API.
 
-Built in [ReactJS](https://reactjs.org/) with [D3](https://d3js.org/), [Redux](https://redux.js.org/), HTML, CSS and JavaScript.
+Built in [react](https://reactjs.org/) with [d3](https://d3js.org/), [redux](https://redux.js.org/), HTML, CSS and JavaScript.
