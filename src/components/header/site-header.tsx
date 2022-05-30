@@ -9,6 +9,7 @@ import { useNavLinksQuery } from "../../hooks/useNavLinksQuery";
 import { MobileHeader } from "./mobile-header";
 import { DesktopHeader } from "./desktop-header";
 import { NavLinkItem } from "../../types/interface";
+import { Link } from "gatsby";
 
 const appBarStyles: SxProps = {
   backgroundColor: "#e7e7e7",
@@ -29,6 +30,13 @@ const appBarStyles: SxProps = {
   "& .MuiIconButton-root": {
     color: "#000000",
   },
+  "& .title-link": {
+    color: "#0572e1",
+    textDecoration: "none",
+  },
+  "& .pizza": {
+    fontSize: { xs: "18px", sm: "22px" },
+  },
 };
 
 export const SiteHeader = (): JSX.Element => {
@@ -39,8 +47,17 @@ export const SiteHeader = (): JSX.Element => {
   return (
     <AppBar sx={appBarStyles} position="static">
       <Box display="flex" flexDirection="column">
-        <Typography variant="h1">Jacob Greenwald</Typography>
-        <Typography component="span">Software Engineer</Typography>
+        <Typography variant="h1">
+          <Link className="title-link" to="/">
+            Jacob Greenwald
+          </Link>
+        </Typography>
+        <Typography component="span">
+          Software Engineer{" "}
+          <Box component="span" className="pizza">
+            🍕
+          </Box>
+        </Typography>
       </Box>
       <DesktopHeader navLinks={navLinks} />
       <MobileHeader

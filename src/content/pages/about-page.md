@@ -2,4 +2,4 @@
 page: "about"
 ---
 
-<h1>// TODO: build this page </h1>
+<h2>// TODO: build this page 😄 </h2>
