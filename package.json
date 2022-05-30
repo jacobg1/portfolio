@@ -51,6 +51,7 @@
     "eslint-plugin-no-floating-promise": "1.0.2",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.29.4",
+    "eslint-webpack-plugin": "^3.1.1",
     "gatsby-plugin-eslint": "4.0.2",
     "gatsby-remark-static-images": "1.2.1",
     "prettier": "2.6.2",
