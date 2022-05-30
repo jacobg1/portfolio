@@ -85,6 +85,7 @@ const config: GatsbyConfig = {
             },
           },
           "gatsby-remark-static-images",
+          "gatsby-remark-emoji-unicode",
         ],
       },
     },
@@ -96,7 +97,7 @@ const config: GatsbyConfig = {
             google: [
               {
                 family: "Overpass",
-                variants: ["200", "300", "400", "500", "600", "700", "900"],
+                variants: ["400", "600", "700", "900"],
               },
             ],
           },
