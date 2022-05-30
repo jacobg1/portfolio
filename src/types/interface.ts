@@ -97,3 +97,9 @@ export interface ProjectTabsProps {
   value: number;
   handleChange: (_: React.SyntheticEvent, newValue: number) => void;
 }
+
+export interface ProjectLinkProps {
+  text: string;
+  linkHref: string;
+  icon: JSX.Element;
+}
