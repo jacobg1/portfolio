@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PageMeta } from "../components/page-meta";
 import { graphql, PageProps } from "gatsby";
-import { ProjectsPageContent } from "../types/interface";
+import { PageContent } from "../types/interface";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Content } from "../components/content";
@@ -11,9 +11,6 @@ import type { SxProps } from "@mui/material";
 const projectPageStyles: SxProps = {
   margin: { xs: "10px 0 0", sm: "25px 0 0" },
   textAlign: { sm: "center" },
-  "& p": {
-    // margin: "10px 0 20px",
-  },
 };
 
 const ProjectsPage = ({
@@ -23,7 +20,7 @@ const ProjectsPage = ({
       frontmatter: { title },
     },
   },
-}: PageProps<ProjectsPageContent>): JSX.Element => {
+}: PageProps<PageContent>): JSX.Element => {
   return (
     <>
       <PageMeta metaTitle="My Projects" />
@@ -36,8 +33,6 @@ const ProjectsPage = ({
   );
 };
 
-export default ProjectsPage;
-
 export const pageQuery = graphql`
   query ProjectsPage {
     content: markdownRemark(frontmatter: { page: { eq: "projects-page" } }) {
@@ -48,3 +43,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default ProjectsPage;

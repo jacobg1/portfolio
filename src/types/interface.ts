@@ -1,3 +1,5 @@
+import { IGatsbyImageData } from "gatsby-plugin-image";
+
 export interface NavLinkItem {
   text: string;
   destination: string;
@@ -37,11 +39,29 @@ type ProjectContent = {
   };
 };
 
-interface Html {
-  html: string;
+export type HtmlString = string;
+
+export interface PageContent {
+  content: {
+    html: HtmlString;
+    frontmatter: {
+      title: string;
+    };
+  };
 }
 
-interface Node extends Html {
+interface GatsbyImageSharp {
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData;
+  };
+}
+
+export interface PageContentWithImage extends PageContent {
+  featuredImage: GatsbyImageSharp;
+}
+
+interface Node {
+  html: HtmlString;
   id: string;
   frontmatter: ProjectContent;
 }
@@ -50,24 +70,11 @@ type Edge = {
   node: Node;
 };
 
-export interface ProjectsPageContent {
-  content: {
-    html: string;
-    frontmatter: {
-      title: string;
-    };
-  };
-}
-
 export interface ProjectsListContent {
   projects: {
     edges: Edge[];
   };
 }
-
-export type PageData = {
-  markdownRemark: Html;
-};
 
 export interface SiteMetadata {
   title: string;
@@ -81,7 +88,8 @@ export interface PageMetaProps {
   metaDescription?: string;
 }
 
-export interface ProjectProps extends Html {
+export interface ProjectProps {
+  html: HtmlString;
   title: string;
   app: string;
   repo: string;
