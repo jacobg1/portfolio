@@ -1,7 +1,9 @@
 import * as React from "react";
+
 import { Helmet } from "react-helmet";
-import { PageMetaProps, SiteMetadata } from "../types/interface";
+
 import { useMetadataQuery } from "../hooks/useMetadataQuery";
+import { PageMetaProps, SiteMetadata } from "../types/interface";
 
 export const PageMeta = ({
   metaDescription,

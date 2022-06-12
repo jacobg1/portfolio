@@ -1,7 +1,9 @@
 import * as React from "react";
+
 import type { SxProps } from "@mui/material";
-import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+
 import { ProjectTabsProps } from "../../types/interface";
 
 const projectTabsStyle: SxProps = {

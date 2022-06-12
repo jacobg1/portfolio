@@ -1,12 +1,14 @@
 import * as React from "react";
-import { PageMeta } from "../components/page-meta";
-import { graphql, PageProps } from "gatsby";
-import { PageContent } from "../types/interface";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import { Content } from "../components/content";
-import { ProjectsList } from "../components/projects/projects-list";
+
 import type { SxProps } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { graphql, PageProps } from "gatsby";
+
+import { Content } from "../components/content";
+import { PageMeta } from "../components/page-meta";
+import { ProjectsList } from "../components/projects/projects-list";
+import { PageContent } from "../types/interface";
 
 const projectPageStyles: SxProps = {
   margin: { xs: "10px 0 0", sm: "25px 0 0" },

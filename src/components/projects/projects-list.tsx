@@ -1,6 +1,8 @@
 import { default as React, SyntheticEvent } from "react";
-import { ProjectsListContent } from "../../types/interface";
+
 import { graphql, useStaticQuery } from "gatsby";
+
+import { ProjectsListContent } from "../../types/interface";
 import { Project } from "./project-single";
 import { ProjectTabs } from "./project-tabs";
 
