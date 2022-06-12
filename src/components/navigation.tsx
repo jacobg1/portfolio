@@ -2,14 +2,25 @@ import * as React from "react";
 import { Link as InternalLink } from "gatsby-theme-material-ui";
 import Link from "@mui/material/Link";
 import { NavLinkList, NavLinkItem } from "../types/interface";
+import { useLocation } from "@reach/router";
 
 export const NavLink = ({
   destination,
   text,
   newTab,
 }: NavLinkItem): JSX.Element => {
-  const pathname =
-    typeof window !== "undefined" ? window.location.pathname : "/";
+  const location = useLocation();
+
+  const comparePath = (destination: string, pathname: string): boolean => {
+    if (pathname === "/") return destination === pathname;
+
+    const normalizePath = pathname.endsWith("/")
+      ? pathname.slice(0, -1)
+      : pathname;
+
+    return destination === normalizePath;
+  };
+
   return (
     <>
       {newTab ? (
@@ -18,8 +29,10 @@ export const NavLink = ({
         </Link>
       ) : (
         <InternalLink
-          sx={{ fontWeight: destination === pathname ? 900 : 400 }}
           to={destination}
+          sx={{
+            fontWeight: comparePath(destination, location.pathname) ? 900 : 400,
+          }}
         >
           {text}
         </InternalLink>
