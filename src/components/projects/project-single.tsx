@@ -1,13 +1,15 @@
 import * as React from "react";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import type { SxProps } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TerminalIcon from "@mui/icons-material/Terminal";
-import { ProjectLink } from "./project-link";
+
 import { ProjectProps } from "../../types/interface";
 import { Content } from "../content";
+import { ProjectLink } from "./project-link";
 
 const projectStyles: SxProps = {
   position: "static",

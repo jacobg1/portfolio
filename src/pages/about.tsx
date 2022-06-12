@@ -1,13 +1,15 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import { PageMeta } from "../components/page-meta";
-import { graphql, PageProps } from "gatsby";
-import { Content } from "../components/content";
-import { PageContentWithImage } from "../types/interface";
+
 import type { SxProps } from "@mui/material";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
+import { graphql, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+
+import { Content } from "../components/content";
+import { PageMeta } from "../components/page-meta";
+import { PageContentWithImage } from "../types/interface";
 
 const aboutPageStyles: SxProps = {
   maxWidth: "1750px",

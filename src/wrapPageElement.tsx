@@ -1,6 +1,8 @@
+import * as React from "react";
+
 import { ThemeProvider } from "@emotion/react";
 import { GatsbyBrowser } from "gatsby";
-import * as React from "react";
+
 import { Page } from "./components/page";
 import theme from "./theme";
 

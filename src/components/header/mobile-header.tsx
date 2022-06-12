@@ -1,11 +1,13 @@
 import { default as React, useEffect } from "react";
+
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { SiteLinks, NavLink } from "../navigation";
-import type { SxProps } from "@mui/material";
-import { MobileHeaderProps } from "../../types/interface";
 import { globalHistory } from "@reach/router";
+
+import { MobileHeaderProps } from "../../types/interface";
+import { NavLink, SiteLinks } from "../navigation";
 
 const mobileHeaderStyles: SxProps = {
   height: "100%",

@@ -1,10 +1,12 @@
 import * as React from "react";
+
+import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { NavLinkItem } from "../types/interface";
+
 import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
+import { NavLinkItem } from "../types/interface";
 import { NavLink, SiteLinks } from "./navigation";
-import type { SxProps } from "@mui/material";
 
 const footerStyles: SxProps = {
   backgroundColor: "#e7e7e7",

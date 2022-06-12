@@ -1,8 +1,10 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
+
 import type { SxProps } from "@mui/material";
-import { SiteLinks } from "../navigation";
+import Box from "@mui/material/Box";
+
 import { NavLinkList } from "../../types/interface";
+import { SiteLinks } from "../navigation";
 
 const desktopHeaderStyles: SxProps = {
   flexDirection: "row",

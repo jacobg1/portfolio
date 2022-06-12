@@ -1,15 +1,17 @@
 import { default as React, useState } from "react";
+
+import DensityMediumSharpIcon from "@mui/icons-material/DensityMediumSharp";
 import type { SxProps } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import DensityMediumSharpIcon from "@mui/icons-material/DensityMediumSharp";
-import { useNavLinksQuery } from "../../hooks/useNavLinksQuery";
-import { MobileHeader } from "./mobile-header";
-import { DesktopHeader } from "./desktop-header";
-import { NavLinkItem } from "../../types/interface";
+import Typography from "@mui/material/Typography";
 import { Link } from "gatsby";
+
+import { useNavLinksQuery } from "../../hooks/useNavLinksQuery";
+import { NavLinkItem } from "../../types/interface";
+import { DesktopHeader } from "./desktop-header";
+import { MobileHeader } from "./mobile-header";
 
 const appBarStyles: SxProps = {
   backgroundColor: "#e7e7e7",
