@@ -10,9 +10,13 @@ import type { SxProps } from "@mui/material";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const aboutPageStyles: SxProps = {
-  margin: { xs: "15px 0 0", sm: "25px 0 0", md: "auto" },
-  textAlign: { xs: "center", md: "left" },
   maxWidth: "1750px",
+  margin: {
+    xs: "15px 0 0",
+    sm: "25px 0 0",
+    md: "auto",
+  },
+  textAlign: { xs: "center", md: "left" },
   "& .image-container": {
     margin: { xs: "25px auto 40px", md: "auto" },
     maxWidth: { xs: "150px", sm: "300px" },
@@ -22,27 +26,32 @@ const aboutPageStyles: SxProps = {
     marginTop: { md: "20px", lg: "50px" },
   },
   "& .divider": {
+    maxWidth: "75%",
     border: "1px solid #0572e1",
     margin: {
       xs: "15px auto 10px",
       md: "25px auto 50px",
       lg: "25px auto 75px",
     },
-    maxWidth: "75%",
   },
 };
 
 const contentStyles: SxProps = {
   display: "flex",
+  alignItems: "center",
   flexDirection: { xs: "column", md: "row" },
   justifyContent: { xs: "center", md: "space-between" },
-  alignItems: "center",
   "& p": {
     margin: 0,
   },
   "& .content": {
     margin: { xs: "0 auto 30px", md: 0 },
-    maxWidth: { xs: "385px", md: "60%", lg: "70%", xl: "75%" },
+    maxWidth: {
+      xs: "385px",
+      md: "60%",
+      lg: "70%",
+      xl: "75%",
+    },
   },
 };
 
