@@ -13,6 +13,7 @@ const pageStyles: SxProps = {
   main: {
     padding: "20px 20px 20px",
     minHeight: "calc(100vh - 70px)",
+    minWidth: "320px",
     backgroundColor: "#f5f5f5",
     a: {
       textDecoration: "none",
