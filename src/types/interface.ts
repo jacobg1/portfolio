@@ -6,6 +6,12 @@ export interface NavLinkItem {
   newTab: boolean;
 }
 
+export interface Skill {
+  text: string;
+  type: string;
+  website: string;
+}
+
 export interface NavLinkList {
   navLinks: NavLinkItem[];
 }
