@@ -8,8 +8,8 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
 import { ProjectProps } from "../../types/interface";
+import { ButtonLink } from "../global/button-link";
 import { Content } from "../global/content";
-import { ProjectLink } from "./project-link";
 
 const projectStyles: SxProps = {
   position: "static",
@@ -67,8 +67,8 @@ export const Project = ({
       <Divider className="divider" />
       <Box className="project-container">
         <Box className="project-links">
-          <ProjectLink text="App" linkHref={app} icon={<TerminalIcon />} />
-          <ProjectLink text="Repo" linkHref={repo} icon={<GitHubIcon />} />
+          <ButtonLink text="App" linkHref={app} icon={<TerminalIcon />} />
+          <ButtonLink text="Repo" linkHref={repo} icon={<GitHubIcon />} />
         </Box>
         <Content content={html} />
       </Box>
