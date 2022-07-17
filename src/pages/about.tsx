@@ -9,6 +9,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 import { Content } from "../components/content";
 import { PageMeta } from "../components/page-meta";
+import { SkillsList } from "../components/skills/skills-list";
 import { PageContentWithImage } from "../types/interface";
 
 const aboutPageStyles: SxProps = {
@@ -21,14 +22,14 @@ const aboutPageStyles: SxProps = {
   textAlign: { xs: "center", md: "left" },
   "& .image-container": {
     margin: { xs: "25px auto 40px", md: "auto" },
-    maxWidth: { xs: "150px", sm: "300px" },
+    maxWidth: { xs: "175px", sm: "250px" },
   },
   "& .MuiTypography-h2": {
     textAlign: "center",
     marginTop: { md: "20px", lg: "50px" },
   },
   "& .divider": {
-    maxWidth: "75%",
+    width: "70%",
     border: "1px solid #0572e1",
     margin: {
       xs: "15px auto 10px",
@@ -41,19 +42,17 @@ const aboutPageStyles: SxProps = {
 const contentStyles: SxProps = {
   display: "flex",
   alignItems: "center",
+  maxWidth: "1200px",
+  margin: "auto",
   flexDirection: { xs: "column", md: "row" },
   justifyContent: { xs: "center", md: "space-between" },
   "& p": {
     margin: 0,
   },
   "& .content": {
+    textAlign: "left",
+    width: "65%",
     margin: { xs: "0 auto 30px", md: 0 },
-    maxWidth: {
-      xs: "385px",
-      md: "60%",
-      lg: "70%",
-      xl: "75%",
-    },
   },
 };
 
@@ -83,6 +82,7 @@ const IndexPage = ({
           </Box>
         </Box>
       </Box>
+      <SkillsList />
     </>
   );
 };
@@ -95,10 +95,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    featuredImage: file(relativePath: { regex: "/about-me-image/" }) {
+    featuredImage: file(relativePath: { regex: "/about-me-image2/" }) {
       childImageSharp {
         gatsbyImageData(
-          width: 300
+          width: 250
           layout: CONSTRAINED
           placeholder: TRACED_SVG
           formats: [AUTO, WEBP, AVIF]
