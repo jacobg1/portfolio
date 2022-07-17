@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { Link } from "gatsby";
 
-import { useNavLinksQuery } from "../../hooks/useNavLinksQuery";
+import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
 import { NavLinkItem } from "../../types/interface";
 import { DesktopHeader } from "./desktop-header";
 import { MobileHeader } from "./mobile-header";
