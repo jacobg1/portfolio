@@ -4,7 +4,7 @@ import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import { useNavLinksQuery } from "../hooks/useNavLinksQuery";
+import { useNavLinksQuery } from "../hooks/use-navlinks-query";
 import { NavLinkItem } from "../types/interface";
 import { NavLink, SiteLinks } from "./navigation";
 

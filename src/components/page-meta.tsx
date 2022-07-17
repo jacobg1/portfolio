@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { Helmet } from "react-helmet";
 
-import { useMetadataQuery } from "../hooks/useMetadataQuery";
+import { useMetadataQuery } from "../hooks/use-metadata-query";
 import { PageMetaProps, SiteMetadata } from "../types/interface";
 
 export const PageMeta = ({
