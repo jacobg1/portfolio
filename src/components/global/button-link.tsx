@@ -4,9 +4,9 @@ import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-import { ProjectLinkProps } from "../../types/interface";
+import { ButtonLinkProps } from "../../types/interface";
 
-const projectLinkStyles: SxProps = {
+const buttonLinkStyles: SxProps = {
   width: "30%",
   textAlign: "center",
   maxWidth: "200px",
@@ -38,14 +38,15 @@ const projectLinkStyles: SxProps = {
   },
 };
 
-export const ProjectLink = ({
+export const ButtonLink = ({
   text,
   linkHref,
   icon,
-}: ProjectLinkProps): JSX.Element => {
+}: ButtonLinkProps): JSX.Element => {
   return (
-    <Box sx={projectLinkStyles}>
+    <Box sx={buttonLinkStyles} className="button-link-container">
       <Button
+        className="button-link"
         href={linkHref}
         target="_blank"
         variant="outlined"
