@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { graphql, PageProps } from "gatsby";
 
-import { Content } from "../components/content";
-import { PageMeta } from "../components/page-meta";
+import { Content } from "../components/global/content";
+import { PageMeta } from "../components/global/page-meta";
 import { ProjectsList } from "../components/projects/projects-list";
 import { PageContent } from "../types/interface";
 

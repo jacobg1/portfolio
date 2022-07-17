@@ -8,7 +8,7 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
 import { ProjectProps } from "../../types/interface";
-import { Content } from "../content";
+import { Content } from "../global/content";
 import { ProjectLink } from "./project-link";
 
 const projectStyles: SxProps = {

@@ -7,8 +7,8 @@ import Typography from "@mui/material/Typography";
 import { graphql, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import { Content } from "../components/content";
-import { PageMeta } from "../components/page-meta";
+import { Content } from "../components/global/content";
+import { PageMeta } from "../components/global/page-meta";
 import { SkillsList } from "../components/skills/skills-list";
 import { PageContentWithImage } from "../types/interface";
 
@@ -81,8 +81,8 @@ const IndexPage = ({
             <Content content={html} />
           </Box>
         </Box>
+        <SkillsList />
       </Box>
-      <SkillsList />
     </>
   );
 };
@@ -95,10 +95,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    featuredImage: file(relativePath: { regex: "/about-me-image2/" }) {
+    featuredImage: file(relativePath: { regex: "/about-me-image3/" }) {
       childImageSharp {
         gatsbyImageData(
-          width: 250
+          width: 400
+          height: 450
           layout: CONSTRAINED
           placeholder: TRACED_SVG
           formats: [AUTO, WEBP, AVIF]

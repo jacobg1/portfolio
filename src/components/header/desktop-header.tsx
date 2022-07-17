@@ -4,7 +4,7 @@ import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 
 import { NavLinkList } from "../../types/interface";
-import { SiteLinks } from "../navigation";
+import { SiteLinks } from "../global/navigation";
 
 const desktopHeaderStyles: SxProps = {
   flexDirection: "row",

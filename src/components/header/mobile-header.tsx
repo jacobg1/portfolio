@@ -7,7 +7,7 @@ import Drawer from "@mui/material/Drawer";
 import { globalHistory } from "@reach/router";
 
 import { MobileHeaderProps } from "../../types/interface";
-import { NavLink, SiteLinks } from "../navigation";
+import { NavLink, SiteLinks } from "../global/navigation";
 
 const mobileHeaderStyles: SxProps = {
   height: "100%",

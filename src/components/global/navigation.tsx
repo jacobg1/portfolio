@@ -4,7 +4,7 @@ import Link from "@mui/material/Link";
 import { useLocation } from "@reach/router";
 import { Link as InternalLink } from "gatsby-theme-material-ui";
 
-import { NavLinkList, NavLinkItem } from "../types/interface";
+import { NavLinkList, NavLinkItem } from "../../types/interface";
 
 export const NavLink = ({
   destination,
