@@ -11,6 +11,19 @@ import { ButtonLink } from "../global/button-link";
 
 const skillIconStyles: SxProps = {
   alignSelf: "center",
+  display: "flex",
+  svg: {
+    width: "auto",
+  },
+  "&.database svg": {
+    fill: "#009688",
+  },
+  "&.frontend svg": {
+    fill: "#0900ff",
+  },
+  "&.backend svg": {
+    fill: "#0900ff",
+  },
 };
 
 export const SingleSkill = ({ text, type, website }: Skill): JSX.Element => {
@@ -21,10 +34,10 @@ export const SingleSkill = ({ text, type, website }: Skill): JSX.Element => {
   };
   const getSkillIcons: JSX.Element[] = type
     .split(",")
-    .map((t: string, i: number) => {
+    .map((type: string, i: number) => {
       return (
-        <Box sx={skillIconStyles} key={`skill-${i}`}>
-          {skillIconsMapping[t as SkillsEnum]}
+        <Box sx={skillIconStyles} className={type} key={`skill-${i}`}>
+          {skillIconsMapping[type as SkillsEnum]}
         </Box>
       );
     });
