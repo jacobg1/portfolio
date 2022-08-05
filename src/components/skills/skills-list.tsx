@@ -14,6 +14,9 @@ const skillsListStyles: SxProps = {
   "& .button-link-container": {
     width: "auto",
     margin: "5px",
+    "& .MuiButton-root": {
+      lineHeight: "17px",
+    },
     "& .button-link": {
       textTransform: "lowercase",
       border: "1px solid #1976d2",
@@ -42,7 +45,7 @@ export const SkillsList = (): JSX.Element => {
   const mySkills = useSkillsQuery<Skill[]>();
   return (
     <Box sx={skillsSectionStyles}>
-      <Box display="flex" alignItems="center">
+      <Box display="flex" alignItems="center" marginLeft="5px">
         <Typography className="skills-header" variant="h3">
           Skills
         </Typography>
