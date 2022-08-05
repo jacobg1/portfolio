@@ -6,9 +6,15 @@ export interface NavLinkItem {
   newTab: boolean;
 }
 
+export enum SkillsEnum {
+  BACKEND = "backend",
+  FRONTEND = "frontend",
+  DATABASE = "database",
+}
+
 export interface Skill {
   text: string;
-  type: string;
+  type: string | SkillsEnum;
   website: string;
 }
 
@@ -115,5 +121,5 @@ export interface ProjectTabsProps {
 export interface ButtonLinkProps {
   text: string;
   linkHref: string;
-  icon: JSX.Element;
+  icon: JSX.Element | JSX.Element[];
 }
