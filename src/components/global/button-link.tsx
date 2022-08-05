@@ -20,6 +20,9 @@ const buttonLinkStyles: SxProps = {
   "& .MuiSvgIcon-root": {
     fontSize: { sm: "23px" },
   },
+  "& .button-text": {
+    paddingTop: "2px",
+  },
   "& .MuiButton-startIcon": {
     paddingBottom: "2px",
   },
@@ -52,7 +55,7 @@ export const ButtonLink = ({
         variant="outlined"
         startIcon={icon}
       >
-        <Box component="span" sx={{ paddingTop: "2px" }}>
+        <Box className="button-text" component="span">
           {text}
         </Box>
       </Button>
