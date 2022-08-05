@@ -21,15 +21,16 @@ const aboutPageStyles: SxProps = {
   },
   textAlign: { xs: "center", md: "left" },
   "& .image-container": {
-    margin: { xs: "25px auto 40px", md: "auto" },
+    margin: { xs: "20px auto 30px", md: 0 },
+    alignSelf: { xs: "center", md: "flex-start" },
     maxWidth: { xs: "175px", sm: "250px" },
   },
   "& .MuiTypography-h2": {
     textAlign: "center",
-    marginTop: { md: "20px", lg: "50px" },
+    marginTop: { xs: "25px", md: "50px" },
   },
   "& .divider": {
-    width: "70%",
+    width: { xs: "90%", md: "80%" },
     border: "1px solid #0572e1",
     margin: {
       xs: "15px auto 10px",
@@ -45,18 +46,18 @@ const contentStyles: SxProps = {
   maxWidth: "1200px",
   margin: "auto",
   flexDirection: { xs: "column", md: "row" },
-  justifyContent: { xs: "center", md: "space-between" },
+  justifyContent: { xs: "center", md: "space-evenly" },
   "& p": {
     margin: 0,
   },
   "& .content": {
     textAlign: "left",
-    width: "65%",
+    width: { sm: "65%" },
     margin: { xs: "0 auto 30px", md: 0 },
   },
 };
 
-const IndexPage = ({
+const AboutPage = ({
   data: {
     content: {
       html,
@@ -68,7 +69,7 @@ const IndexPage = ({
   },
 }: PageProps<PageContentWithImage>): JSX.Element => {
   return (
-    <>
+    <Box display="flex">
       <PageMeta metaTitle="About Me" />
       <Box sx={aboutPageStyles}>
         <Typography variant="h2">{title}</Typography>
@@ -79,11 +80,11 @@ const IndexPage = ({
           </Box>
           <Box className="content">
             <Content content={html} />
+            <SkillsList />
           </Box>
         </Box>
-        <SkillsList />
       </Box>
-    </>
+    </Box>
   );
 };
 
@@ -109,4 +110,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default IndexPage;
+export default AboutPage;
