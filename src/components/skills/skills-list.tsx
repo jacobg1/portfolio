@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { useSkillsQuery } from "../../hooks/use-skills-query";
 import { Skill } from "../../types/interface";
 import { SingleSkill } from "./single-skill";
+import { SkillIconsKey } from "./skill-icons-key";
 
 const skillsListStyles: SxProps = {
   display: "flex",
@@ -34,24 +35,35 @@ const skillsSectionStyles: SxProps = {
   margin: "30px auto",
   "& .skills-header": {
     lineHeight: "24px",
+    display: "flex",
+    alignItems: "center",
   },
   "& .robot-arm": {
-    padding: "0 0 5px 5px",
+    padding: "0 0 4px 5px",
     fontSize: { xs: "18px", sm: "22px", lg: "24px" },
   },
+};
+
+const skillsHeaderStyles: SxProps = {
+  maxWidth: { md: "85%", lg: "93%" },
+  display: "flex",
+  alignItems: "center",
+  margin: "0 0 10px 5px",
+  justifyContent: "space-between",
 };
 
 export const SkillsList = (): JSX.Element => {
   const mySkills = useSkillsQuery<Skill[]>();
   return (
     <Box sx={skillsSectionStyles}>
-      <Box display="flex" alignItems="center" marginLeft="5px">
+      <Box sx={skillsHeaderStyles}>
         <Typography className="skills-header" variant="h3">
           Skills
+          <Box component="span" className="robot-arm">
+            🦾
+          </Box>
         </Typography>
-        <Box component="span" className="robot-arm">
-          🦾
-        </Box>
+        <SkillIconsKey />
       </Box>
       <Box sx={skillsListStyles}>
         {mySkills.map((skill, i) => (
