@@ -6,8 +6,8 @@ import WebIcon from "@mui/icons-material/Web";
 
 import { SkillsEnum } from "../../types/interface";
 
-const frontendColor = "#7c1b1b";
-const backendColor = "#0900ff";
+const frontendColor = "#af0000";
+const backendColor = "#4942ff";
 const databaseColor = "#009688";
 
 export const skillIconsMapping = {
