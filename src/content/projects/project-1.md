@@ -6,7 +6,7 @@ order: 1
 icon: ../../images/vinyl.svg
 ---
 
-A search UI that pulls in live concert recordings from [archive.org's](https://archive.org) API.
+My latest project. A search UI that pulls in live concert recordings from [archive.org's](https://archive.org) API.
 
 Features include a custom JavaScript music player and access to thousands of live concert recordings.
 
