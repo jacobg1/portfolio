@@ -9,6 +9,7 @@ import { NavLinkItem } from "../../types/interface";
 import { NavLink, SiteLinks } from "./navigation";
 
 const footerStyles: SxProps = {
+  minWidth: "320px",
   backgroundColor: "#e7e7e7",
   padding: { xs: "16px 17px", sm: 0 },
   position: "absolute",

@@ -14,6 +14,7 @@ import { DesktopHeader } from "./desktop-header";
 import { MobileHeader } from "./mobile-header";
 
 const appBarStyles: SxProps = {
+  minWidth: "320px",
   backgroundColor: "#e7e7e7",
   display: "flex",
   flexDirection: "row",
