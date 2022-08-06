@@ -17,7 +17,7 @@ theme = createTheme({
     },
     subtitle1: {
       fontSize: "14px",
-      fontWeight: 400,
+      fontWeight: 600,
       [theme.breakpoints.up("sm")]: {
         fontSize: "18px",
       },
