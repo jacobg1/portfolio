@@ -5,5 +5,10 @@ import type { HtmlString } from "../../types/interface";
 type ContentProps = { content: HtmlString };
 
 export const Content = ({ content }: ContentProps): JSX.Element => {
-  return <div dangerouslySetInnerHTML={{ __html: content }} />;
+  return (
+    <div
+      className="page-content"
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  );
 };
