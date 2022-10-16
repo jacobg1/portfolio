@@ -57,9 +57,9 @@ export const SiteHeader = (): JSX.Element => {
         </Typography>
         <Typography component="span">
           Software Engineer{" "}
-          <Box component="span" className="pizza">
+          {/* <Box component="span" className="pizza">
             🍕
-          </Box>
+          </Box> */}
         </Typography>
       </Box>
       <DesktopHeader navLinks={navLinks} />

@@ -34,8 +34,8 @@ const aboutPageStyles: SxProps = {
     border: "1px solid #0572e1",
     margin: {
       xs: "15px auto 10px",
-      md: "25px auto 50px",
-      lg: "25px auto 75px",
+      // md: "25px auto 50px",
+      // lg: "25px auto 75px",
     },
   },
 };
@@ -50,6 +50,9 @@ const contentStyles: SxProps = {
   "& p": {
     margin: 0,
   },
+  "& .page-content": {
+    padding: "20px 0 0 0",
+  },
   "& .content": {
     textAlign: "left",
     width: { sm: "65%" },
@@ -63,9 +66,9 @@ const AboutPage = ({
       html,
       frontmatter: { title },
     },
-    featuredImage: {
-      childImageSharp: { gatsbyImageData },
-    },
+    // featuredImage: {
+    //   childImageSharp: { gatsbyImageData },
+    // },
   },
 }: PageProps<PageContentWithImage>): JSX.Element => {
   return (
@@ -75,9 +78,9 @@ const AboutPage = ({
         <Typography variant="h2">{title}</Typography>
         <Divider className="divider" />
         <Box sx={contentStyles}>
-          <Box className="image-container">
+          {/* <Box className="image-container">
             <GatsbyImage image={gatsbyImageData} alt="about me image" />
-          </Box>
+          </Box> */}
           <Box className="content">
             <Content content={html} />
             <SkillsList />
@@ -96,17 +99,17 @@ export const pageQuery = graphql`
         title
       }
     }
-    featuredImage: file(relativePath: { regex: "/about-me-image3/" }) {
-      childImageSharp {
-        gatsbyImageData(
-          width: 400
-          height: 450
-          layout: CONSTRAINED
-          placeholder: TRACED_SVG
-          formats: [AUTO, WEBP, AVIF]
-        )
-      }
-    }
+    # featuredImage: file(relativePath: { regex: "/about-me-image/" }) {
+    #   childImageSharp {
+    #     gatsbyImageData(
+    #       width: 400
+    #       height: 450
+    #       layout: CONSTRAINED
+    #       placeholder: TRACED_SVG
+    #       formats: [AUTO, WEBP, AVIF]
+    #     )
+    #   }
+    # }
   }
 `;
 
