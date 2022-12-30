@@ -1,7 +1,7 @@
 ---
 title: "Stock Viz"
 repo: "https://github.com/jacobg1/stock-viz"
-app: "https://jacob-greenwald.com/stock-viz"
+app: "https://jacobg1.github.io/stock-viz/"
 order: 2
 icon: ../../images/auto-graph.svg
 ---
