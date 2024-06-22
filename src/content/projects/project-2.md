@@ -1,7 +1,7 @@
 ---
 title: "Space Search"
 repo: "https://github.com/jacobg1/space-search"
-app: "http://space-search.surge.sh/"
+app: "https://jacobg1.github.io/space-search"
 order: 3
 icon: ../../images/space-search.svg
 ---
