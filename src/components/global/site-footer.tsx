@@ -1,12 +1,13 @@
 import * as React from "react";
 
-import type { SxProps } from "@mui/material";
+import { type SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
+import { SiteLinks } from "./navigation";
 import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
 import { NavLinkItem } from "../../types/interface";
-import { NavLink, SiteLinks } from "./navigation";
 
 const footerStyles: SxProps = {
   minWidth: "320px",
@@ -46,11 +47,7 @@ export const SiteFooter = (): JSX.Element => {
         <SiteLinks navLinks={navLinks} />
       </Box>
       <Typography className="email" variant="body1">
-        <NavLink
-          text="greenwald.j8@gmail.com"
-          destination="mailto:greenwald.j8@gmail.com"
-          newTab={false}
-        />
+        <Link href="mailto:greenwald.j8@gmail.com">greenwald.j8@gmail.com</Link>
       </Typography>
     </Box>
   );

@@ -21,8 +21,9 @@ const config: GatsbyConfig = {
       "Portfolio",
       "Software Engineer",
       "Typescript",
+      "JavaScript",
     ],
-    siteUrl: "https://jacob-greenwald.com",
+    siteUrl: "https://www.jacob-greenwald.com",
   },
   plugins: [
     "gatsby-plugin-emotion",
@@ -91,18 +92,19 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: "gatsby-theme-material-ui",
+      resolve: "gatsby-omni-font-loader",
       options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: "Overpass",
-                variants: ["400", "600", "700", "900"],
-              },
-            ],
+        enableListener: true,
+        preconnect: [
+          "https://fonts.googleapis.com",
+          "https://fonts.gstatic.com",
+        ],
+        web: [
+          {
+            name: "Overpass",
+            file: "https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;900&display=swap",
           },
-        },
+        ],
       },
     },
     {
