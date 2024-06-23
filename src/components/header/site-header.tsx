@@ -8,10 +8,10 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { Link } from "gatsby";
 
-import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
-import { NavLinkItem } from "../../types/interface";
 import { DesktopHeader } from "./desktop-header";
 import { MobileHeader } from "./mobile-header";
+import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
+import { NavLinkItem } from "../../types/interface";
 
 const appBarStyles: SxProps = {
   minWidth: "320px",

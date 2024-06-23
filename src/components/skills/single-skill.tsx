@@ -3,9 +3,9 @@ import * as React from "react";
 import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 
+import { skillIconsMapping } from "./skill-icons-mapping";
 import { Skill, SkillsEnum } from "../../types/interface";
 import { ButtonLink } from "../global/button-link";
-import { skillIconsMapping } from "./skill-icons-mapping";
 
 const skillIconStyles: SxProps = {
   alignSelf: "center",

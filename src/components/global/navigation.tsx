@@ -1,8 +1,9 @@
 import * as React from "react";
 
+import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import { useLocation } from "@reach/router";
-import { Link as InternalLink } from "gatsby-theme-material-ui";
+import { Link as InternalLink } from "gatsby";
 
 import { NavLinkList, NavLinkItem } from "../../types/interface";
 
@@ -24,22 +25,31 @@ export const NavLink = ({
   };
 
   return (
-    <>
+    <Box
+      sx={{
+        "&:hover": {
+          textDecoration: "underline",
+          color: "black",
+        },
+      }}
+    >
       {newTab ? (
-        <Link href={destination} target="_blank" rel="noreferrer">
+        <Link href={destination} target="_blank" rel="noopener noreferrer">
           {text}
         </Link>
       ) : (
         <InternalLink
           to={destination}
-          sx={{
+          className="internal-link"
+          style={{
             fontWeight: comparePath(destination, location.pathname) ? 900 : 400,
+            textDecoration: "none",
           }}
         >
           {text}
         </InternalLink>
       )}
-    </>
+    </Box>
   );
 };
 

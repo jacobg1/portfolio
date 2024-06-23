@@ -4,10 +4,10 @@ import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import { useSkillsQuery } from "../../hooks/use-skills-query";
-import { Skill } from "../../types/interface";
 import { SingleSkill } from "./single-skill";
 import { SkillIconsKey } from "./skill-icons-key";
+import { useSkillsQuery } from "../../hooks/use-skills-query";
+import { Skill } from "../../types/interface";
 
 const skillsListStyles: SxProps = {
   display: "flex",

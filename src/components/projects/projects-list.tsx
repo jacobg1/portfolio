@@ -2,9 +2,9 @@ import { default as React, SyntheticEvent } from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
 
-import { ProjectsListContent } from "../../types/interface";
 import { Project } from "./project-single";
 import { ProjectTabs } from "./project-tabs";
+import { ProjectsListContent } from "../../types/interface";
 
 export const ProjectsList = (): JSX.Element => {
   const {
@@ -48,7 +48,7 @@ export const projectsQuery = graphql`
   query ProjectsList {
     projects: allMarkdownRemark(
       filter: { fields: { collection: { eq: "projects" } } }
-      sort: { order: ASC, fields: frontmatter___order }
+      sort: { frontmatter: { order: ASC } }
     ) {
       edges {
         node {
