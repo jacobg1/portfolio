@@ -21,6 +21,7 @@
     "@mdx-js/react": "^2.3.0",
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
+    "axios": "^1.7.2",
     "gatsby": "^5.13.6",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-emotion": "^8.13.1",
@@ -57,6 +58,11 @@
     "gatsby-plugin-eslint": "^4.0.4",
     "gatsby-remark-static-images": "^1.2.1",
     "prettier": "^3.3.2",
-    "typescript": "5.4"
+    "typescript": "5.4",
+    "webpack-dev-middleware": "^5.3.4"
+  },
+  "overrides": {
+		"webpack-dev-middleware": "$webpack-dev-middleware",
+		"axios": "$axios"
   }
 }
