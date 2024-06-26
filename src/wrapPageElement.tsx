@@ -1,17 +1,24 @@
-import * as React from "react";
+import React, { useState, useMemo } from "react";
 
 import { ThemeProvider } from "@emotion/react";
 import { GatsbyBrowser } from "gatsby";
 
 import { Page } from "./components/global/page";
-import theme from "./theme";
+import { SiteThemeContext } from "./context/site-theme-context";
+import { getTheme } from "./theme";
+import { SiteTheme } from "./types/enum";
 
 export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
   element,
 }) => {
+  const [siteTheme, setSiteTheme] = useState<SiteTheme>(SiteTheme.SILVER);
+  const theme = useMemo(() => getTheme(siteTheme), [siteTheme]);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Page>{element}</Page>
-    </ThemeProvider>
+    <SiteThemeContext.Provider value={{ siteTheme, setSiteTheme }}>
+      <ThemeProvider theme={theme}>
+        <Page>{element}</Page>
+      </ThemeProvider>
+    </SiteThemeContext.Provider>
   );
 };
