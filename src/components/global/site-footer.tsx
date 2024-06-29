@@ -4,18 +4,14 @@ import { type SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
+import { styled } from "@mui/system";
 
 import { SiteLinks } from "./navigation";
 import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
 import { NavLinkItem } from "../../types/interface";
 
 const footerStyles: SxProps = {
-  minWidth: "320px",
-  backgroundColor: "#e7e7e7",
   padding: { xs: "16px 17px", sm: 0 },
-  position: "absolute",
-  width: "100%",
-  borderTop: "2px solid #0572e1",
   "& .footer-container": {
     display: "flex",
     maxWidth: "700px",
@@ -39,16 +35,23 @@ const footerStyles: SxProps = {
   },
 };
 
+const Footer = styled("footer", {
+  name: "MuiFooter",
+  overridesResolver: (_, styles) => {
+    return styles.root;
+  },
+})``;
+
 export const SiteFooter = (): JSX.Element => {
   const navLinks = useNavLinksQuery<NavLinkItem[]>();
   return (
-    <Box sx={footerStyles} component="footer">
+    <Footer sx={footerStyles}>
       <Box className="footer-container">
         <SiteLinks navLinks={navLinks} />
       </Box>
       <Typography className="email" variant="body1">
         <Link href="mailto:greenwald.j8@gmail.com">greenwald.j8@gmail.com</Link>
       </Typography>
-    </Box>
+    </Footer>
   );
 };

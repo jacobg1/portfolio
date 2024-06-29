@@ -14,13 +14,7 @@ import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
 import { NavLinkItem } from "../../types/interface";
 
 const appBarStyles: SxProps = {
-  minWidth: "320px",
-  backgroundColor: "#e7e7e7",
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
   padding: { xs: "17px", sm: "20px", md: "25px" },
-  borderBottom: "2px solid #0572e1",
   "& .desktop-header": {
     display: { xs: "none", sm: "flex" },
   },
@@ -32,10 +26,6 @@ const appBarStyles: SxProps = {
   },
   "& .MuiIconButton-root": {
     color: "#000000",
-  },
-  "& .title-link": {
-    color: "#0572e1",
-    textDecoration: "none",
   },
   "& .pizza": {
     fontSize: { xs: "18px", sm: "22px" },
