@@ -1,8 +1,41 @@
-import { Theme, createTheme } from "@mui/material/styles";
+import {
+  ComponentsOverrides,
+  ComponentsVariants,
+  Theme,
+  createTheme,
+} from "@mui/material/styles";
 
 import { SiteTheme } from "./types/enum";
 
-function getTheme(siteTheme: SiteTheme): Theme {
+type CustomTheme = Omit<Theme, "components">;
+
+declare module "@mui/material/styles" {
+  interface ComponentNameToClassKey {
+    MuiFooter: "root";
+    MuiPageContainer: "root";
+  }
+
+  interface ComponentsPropsList {
+    // Update unknown to type of props if props are used
+    MuiFooter: Partial<unknown>;
+    MuiPageContainer: Partial<unknown>;
+  }
+
+  interface Components {
+    MuiFooter?: {
+      defaultProps?: ComponentsPropsList["MuiFooter"];
+      styleOverrides?: ComponentsOverrides<Theme>["MuiFooter"];
+      variants?: ComponentsVariants["MuiFooter"];
+    };
+    MuiPageContainer?: {
+      defaultProps?: ComponentsPropsList["MuiPageContainer"];
+      styleOverrides?: ComponentsOverrides<Theme>["MuiPageContainer"];
+      variants?: ComponentsVariants["MuiPageContainer"];
+    };
+  }
+}
+
+function getTheme(siteTheme: SiteTheme): CustomTheme {
   // TODO remove log
   console.log(siteTheme);
   let theme = createTheme();
@@ -23,6 +56,7 @@ function getTheme(siteTheme: SiteTheme): Theme {
       subtitle1: {
         fontSize: "14px",
         fontWeight: 600,
+        color: "#000000",
         [theme.breakpoints.up("sm")]: {
           fontSize: "18px",
         },
@@ -30,7 +64,6 @@ function getTheme(siteTheme: SiteTheme): Theme {
       h1: {
         fontSize: "25px",
         fontWeight: 600,
-        color: "#0572e1",
         [theme.breakpoints.up("sm")]: {
           fontSize: "28px",
         },
@@ -62,10 +95,26 @@ function getTheme(siteTheme: SiteTheme): Theme {
       },
     },
     components: {
+      MuiAppBar: {
+        styleOverrides: {
+          root: {
+            borderBottom: "2px solid #0572e1",
+            backgroundColor: "#e7e7e7",
+            minWidth: "320px",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            "& .title-link": {
+              color: "#0572e1",
+              textDecoration: "none",
+            },
+          },
+        },
+      },
       MuiLink: {
         styleOverrides: {
           root: {
-            color: "#0572e1",
+            color: "#000000",
             textDecoration: "none",
             "&:hover": {
               textDecoration: "underline",
@@ -84,6 +133,38 @@ function getTheme(siteTheme: SiteTheme): Theme {
         styleOverrides: {
           root: {
             opacity: 1,
+          },
+        },
+      },
+      MuiFooter: {
+        styleOverrides: {
+          root: {
+            backgroundColor: "#e7e7e7",
+            borderTop: "2px solid #0572e1",
+            position: "absolute",
+            width: "100%",
+            minWidth: "320px",
+          },
+        },
+      },
+      MuiPageContainer: {
+        styleOverrides: {
+          root: {
+            main: {
+              padding: "20px 20px 20px",
+              minHeight: "calc(100vh - 70px)",
+              minWidth: "320px",
+              backgroundColor: "#f5f5f5",
+            },
+            "& .page-content": {
+              p: {
+                color: "#000000",
+              },
+              a: {
+                textDecoration: "none",
+                color: "#0572e1",
+              },
+            },
           },
         },
       },
