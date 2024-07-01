@@ -31,7 +31,6 @@ const aboutPageStyles: SxProps = {
   },
   "& .divider": {
     width: { xs: "90%", md: "80%" },
-    border: "1px solid #0572e1",
     margin: {
       xs: "15px auto 10px",
       // md: "25px auto 50px",

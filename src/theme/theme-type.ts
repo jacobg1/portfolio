@@ -41,12 +41,25 @@ export interface ThemeConfig {
     backgroundColor: string;
   };
   header: {
+    color: string;
     backgroundColor: string;
+    borderBottom: string;
   };
   footer: {
     backgroundColor: string;
+    borderTop: string;
   };
   main: {
     backgroundColor: string;
+  };
+  divider: {
+    border: string;
+  };
+  button: {
+    "&:hover": {
+      border: string;
+    };
+    border: string;
+    color: string;
   };
 }
