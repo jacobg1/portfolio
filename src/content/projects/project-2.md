@@ -3,7 +3,7 @@ title: "Space Search"
 repo: "https://github.com/jacobg1/space-search"
 app: "https://jacobg1.github.io/space-search"
 order: 3
-icon: ../../images/space-search.svg
+iconName: space
 ---
 
 One of my older projects. A search UI that pulls photos from NASA's image API. Users input search terms into the search bar and results are displayed below. Includes two different views, grid and list.
