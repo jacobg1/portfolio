@@ -1,5 +1,7 @@
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
+import { ProjectIconName } from "./enum";
+
 export interface NavLinkItem {
   text: string;
   destination: string;
@@ -46,9 +48,7 @@ type ProjectContent = {
   app: string;
   repo: string;
   order: number;
-  icon: {
-    publicURL: string;
-  };
+  iconName: string;
 };
 
 export type HtmlString = string;
@@ -107,9 +107,7 @@ export interface ProjectProps {
   repo: string;
   value: number;
   index: number;
-  icon: {
-    publicURL: string;
-  };
+  iconName: string;
 }
 
 export interface ProjectTabsProps {
@@ -122,4 +120,8 @@ export interface ButtonLinkProps {
   text: string;
   linkHref: string;
   icon: JSX.Element | JSX.Element[];
+}
+
+export interface ProjectIconProps {
+  iconName: ProjectIconName;
 }

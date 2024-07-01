@@ -59,9 +59,7 @@ export const projectsQuery = graphql`
             repo
             app
             order
-            icon {
-              publicURL
-            }
+            iconName
           }
         }
       }
