@@ -21,6 +21,7 @@
     "@mdx-js/react": "^2.3.0",
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
+    "@svgr/webpack": "^8.1.0",
     "axios": "^1.7.2",
     "gatsby": "^5.13.6",
     "gatsby-omni-font-loader": "^2.0.2",
@@ -30,6 +31,7 @@
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-remark-emoji-unicode": "^0.1.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^7.13.1",
@@ -62,7 +64,7 @@
     "webpack-dev-middleware": "^5.3.4"
   },
   "overrides": {
-		"webpack-dev-middleware": "$webpack-dev-middleware",
-		"axios": "$axios"
+    "webpack-dev-middleware": "$webpack-dev-middleware",
+    "axios": "$axios"
   }
 }
