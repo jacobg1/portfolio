@@ -10,8 +10,9 @@ const themeMap = {
 };
 
 export function getTheme(siteTheme: SiteTheme): CustomTheme {
-  const { header, footer, main, mobileHeader } =
+  const { header, footer, main, mobileHeader, divider, button } =
     themeMap?.[siteTheme] || defaultTheme;
+
   let theme = createTheme();
   theme = createTheme({
     typography: {
@@ -89,13 +90,12 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
       MuiAppBar: {
         styleOverrides: {
           root: {
-            borderBottom: "2px solid #0572e1",
             minWidth: "320px",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
             "& .title-link": {
-              color: "#0572e1",
+              color: "inherit",
               textDecoration: "none",
             },
             ...header,
@@ -124,13 +124,20 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
         styleOverrides: {
           root: {
             opacity: 1,
+            "&.Mui-selected": {
+              border: button.border,
+            },
           },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: button,
         },
       },
       MuiFooter: {
         styleOverrides: {
           root: {
-            borderTop: "2px solid #0572e1",
             position: "absolute",
             width: "100%",
             minWidth: "320px",
@@ -156,6 +163,7 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
                 color: "#0572e1",
               },
             },
+            "& .divider": divider,
           },
         },
       },

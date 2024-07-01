@@ -25,7 +25,6 @@ const projectTabsStyle: SxProps = {
     },
     "&.Mui-selected": {
       fontWeight: 900,
-      border: "2px solid #0572e1",
       backgroundColor: "#ffffff",
     },
   },
