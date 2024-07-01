@@ -1,7 +1,10 @@
-import { Theme } from "@emotion/react";
-import { ComponentsOverrides, ComponentsVariants } from "@mui/material";
+import {
+  ComponentsOverrides,
+  ComponentsVariants,
+  Theme as MuiTheme,
+} from "@mui/material/styles";
 
-export type CustomTheme = Omit<Theme, "components">;
+export type CustomTheme = Omit<MuiTheme, "components">;
 
 declare module "@mui/material/styles" {
   interface ComponentNameToClassKey {
@@ -20,17 +23,17 @@ declare module "@mui/material/styles" {
   interface Components {
     MuiFooter?: {
       defaultProps?: ComponentsPropsList["MuiFooter"];
-      styleOverrides?: ComponentsOverrides<Theme>["MuiFooter"];
+      styleOverrides?: ComponentsOverrides<CustomTheme>["MuiFooter"];
       variants?: ComponentsVariants["MuiFooter"];
     };
     MuiPageContainer?: {
       defaultProps?: ComponentsPropsList["MuiPageContainer"];
-      styleOverrides?: ComponentsOverrides<Theme>["MuiPageContainer"];
+      styleOverrides?: ComponentsOverrides<CustomTheme>["MuiPageContainer"];
       variants?: ComponentsVariants["MuiPageContainer"];
     };
     MuiMobileHeaderContainer?: {
       defaultProps?: ComponentsPropsList["MuiMobileHeaderContainer"];
-      styleOverrides?: ComponentsOverrides<Theme>["MuiMobileHeaderContainer"];
+      styleOverrides?: ComponentsOverrides<CustomTheme>["MuiMobileHeaderContainer"];
       variants?: ComponentsVariants["MuiMobileHeaderContainer"];
     };
   }
@@ -62,4 +65,6 @@ export interface ThemeConfig {
     border: string;
     color: string;
   };
+  iconColor: string;
+  buttonBackground: string;
 }
