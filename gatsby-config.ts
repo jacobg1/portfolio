@@ -33,6 +33,12 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
+      resolve: "gatsby-plugin-svgr",
+      options: {
+        incude: /images/,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
