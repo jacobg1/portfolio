@@ -1,43 +1,17 @@
-import {
-  ComponentsOverrides,
-  ComponentsVariants,
-  Theme,
-  createTheme,
-} from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
-import { SiteTheme } from "./types/enum";
+import { CustomTheme } from "./theme-type";
+import { goldTheme, silverTheme as defaultTheme } from "./themes";
+import { SiteTheme } from "../types/enum";
 
-type CustomTheme = Omit<Theme, "components">;
+const themeMap = {
+  [SiteTheme.SILVER]: defaultTheme,
+  [SiteTheme.GOLD]: goldTheme,
+};
 
-declare module "@mui/material/styles" {
-  interface ComponentNameToClassKey {
-    MuiFooter: "root";
-    MuiPageContainer: "root";
-  }
-
-  interface ComponentsPropsList {
-    // Update unknown to type of props if props are used
-    MuiFooter: Partial<unknown>;
-    MuiPageContainer: Partial<unknown>;
-  }
-
-  interface Components {
-    MuiFooter?: {
-      defaultProps?: ComponentsPropsList["MuiFooter"];
-      styleOverrides?: ComponentsOverrides<Theme>["MuiFooter"];
-      variants?: ComponentsVariants["MuiFooter"];
-    };
-    MuiPageContainer?: {
-      defaultProps?: ComponentsPropsList["MuiPageContainer"];
-      styleOverrides?: ComponentsOverrides<Theme>["MuiPageContainer"];
-      variants?: ComponentsVariants["MuiPageContainer"];
-    };
-  }
-}
-
-function getTheme(siteTheme: SiteTheme): CustomTheme {
-  // TODO remove log
-  console.log(siteTheme);
+export function getTheme(siteTheme: SiteTheme): CustomTheme {
+  const { header, footer, main, mobileHeader } =
+    themeMap?.[siteTheme] || defaultTheme;
   let theme = createTheme();
   theme = createTheme({
     typography: {
@@ -95,11 +69,27 @@ function getTheme(siteTheme: SiteTheme): CustomTheme {
       },
     },
     components: {
+      MuiMobileHeaderContainer: {
+        styleOverrides: {
+          root: {
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: "30px 20px 20px",
+            alignItems: "center",
+            color: "#000000",
+            a: {
+              color: "#000000",
+            },
+            ...mobileHeader,
+          },
+        },
+      },
       MuiAppBar: {
         styleOverrides: {
           root: {
             borderBottom: "2px solid #0572e1",
-            backgroundColor: "#e7e7e7",
             minWidth: "320px",
             display: "flex",
             flexDirection: "row",
@@ -108,6 +98,7 @@ function getTheme(siteTheme: SiteTheme): CustomTheme {
               color: "#0572e1",
               textDecoration: "none",
             },
+            ...header,
           },
         },
       },
@@ -139,11 +130,11 @@ function getTheme(siteTheme: SiteTheme): CustomTheme {
       MuiFooter: {
         styleOverrides: {
           root: {
-            backgroundColor: "#e7e7e7",
             borderTop: "2px solid #0572e1",
             position: "absolute",
             width: "100%",
             minWidth: "320px",
+            ...footer,
           },
         },
       },
@@ -154,7 +145,7 @@ function getTheme(siteTheme: SiteTheme): CustomTheme {
               padding: "20px 20px 20px",
               minHeight: "calc(100vh - 70px)",
               minWidth: "320px",
-              backgroundColor: "#f5f5f5",
+              ...main,
             },
             "& .page-content": {
               p: {
@@ -173,5 +164,3 @@ function getTheme(siteTheme: SiteTheme): CustomTheme {
 
   return theme;
 }
-
-export { getTheme };
