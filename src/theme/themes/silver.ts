@@ -1,29 +1,48 @@
 import { ThemeConfig } from "../theme-type";
 
+const mainColor = "#0572e1";
+const secondaryBackground = "#e7e7e7";
+const mainBackground = "#f5f5f5";
+
+const border2px = `2px solid ${mainColor}`;
+const border1px = `1px solid ${mainColor}`;
+
+const buttonBackground = "#ffffff";
+const buttonColor = "#000000";
+
 export const silverTheme: ThemeConfig = {
   mobileHeader: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: mainBackground,
   },
   header: {
-    color: "#0572e1",
-    backgroundColor: "#e7e7e7",
-    borderBottom: "2px solid #0572e1",
+    color: mainColor,
+    backgroundColor: secondaryBackground,
+    borderBottom: border2px,
   },
   footer: {
-    backgroundColor: "#e7e7e7",
-    borderTop: "2px solid #0572e1",
+    backgroundColor: secondaryBackground,
+    borderTop: border2px,
   },
   main: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: mainBackground,
   },
   divider: {
-    border: "1px solid #0572e1",
+    border: border1px,
   },
   button: {
-    border: "2px solid #0572e1",
-    color: "#0572e1",
+    border: border2px,
+    color: buttonColor,
+    backgroundColor: buttonBackground,
     "&:hover": {
-      border: "1px solid #1976d2",
+      border: border1px,
+    },
+  },
+  iconColor: mainColor,
+  skillsButton: {
+    color: buttonColor,
+    backgroundColor: buttonBackground,
+    "&:hover": {
+      backgroundColor: secondaryBackground,
     },
   },
 };
