@@ -23,7 +23,6 @@ const skillsListStyles: SxProps = {
       border: "1px solid #1976d2",
       boxShadow: "1px 1px 1px black",
       "&:hover": {
-        background: "white",
         boxShadow: "none",
         borderColor: "black",
       },
@@ -55,7 +54,7 @@ const skillsHeaderStyles: SxProps = {
 export const SkillsList = (): JSX.Element => {
   const mySkills = useSkillsQuery<Skill[]>();
   return (
-    <Box sx={skillsSectionStyles}>
+    <Box className="skills-section" sx={skillsSectionStyles}>
       <Box sx={skillsHeaderStyles}>
         <Typography className="skills-header" variant="h3">
           Skills

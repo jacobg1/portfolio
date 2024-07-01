@@ -62,9 +62,16 @@ export interface ThemeConfig {
     "&:hover": {
       border: string;
     };
+    backgroundColor: string;
     border: string;
     color: string;
   };
   iconColor: string;
-  buttonBackground: string;
+  skillsButton: {
+    color: string;
+    backgroundColor: string;
+    "&:hover": {
+      backgroundColor: string;
+    };
+  };
 }

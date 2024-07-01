@@ -10,8 +10,16 @@ const themeMap = {
 };
 
 export function getTheme(siteTheme: SiteTheme): CustomTheme {
-  const { header, footer, main, mobileHeader, divider, button } =
-    themeMap?.[siteTheme] || defaultTheme;
+  const {
+    header,
+    footer,
+    main,
+    mobileHeader,
+    divider,
+    button,
+    iconColor,
+    skillsButton,
+  } = themeMap?.[siteTheme] || defaultTheme;
 
   let theme = createTheme();
   theme = createTheme({
@@ -164,11 +172,17 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
               },
             },
             "& .divider": divider,
+            "& .project-icon svg path": {
+              fill: iconColor,
+            },
+            "& .skills-section": {
+              "& .button-link": skillsButton,
+            },
           },
         },
       },
     },
   });
 
-  return theme;
+  return theme as CustomTheme;
 }

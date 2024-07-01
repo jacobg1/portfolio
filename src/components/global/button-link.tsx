@@ -27,7 +27,6 @@ const buttonLinkStyles: SxProps = {
     paddingBottom: "2px",
   },
   "& .MuiButton-root": {
-    backgroundColor: "#ffffff",
     width: "100%",
     lineHeight: { xs: "21px", sm: "24px" },
     fontSize: { sm: "17px" },
