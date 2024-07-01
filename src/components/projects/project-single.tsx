@@ -7,6 +7,8 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
+import { ProjectIcon } from "./project-icon";
+import { ProjectIconName } from "../../types/enum";
 import { ProjectProps } from "../../types/interface";
 import { ButtonLink } from "../global/button-link";
 import { Content } from "../global/content";
@@ -16,7 +18,6 @@ const projectStyles: SxProps = {
   zIndex: "1",
   "& .divider": {
     margin: "15px 0 20px",
-    border: "1px solid #0572e1",
   },
   "& .MuiTypography-h3": {
     marginTop: "4px",
@@ -28,10 +29,14 @@ const projectStyles: SxProps = {
     margin: { xs: "28px 0", sm: "40px 0" },
     justifyContent: { xs: "space-around" },
   },
-  img: {
-    height: { xs: "28px", sm: "38px" },
-    width: { xs: "28px", sm: "38px" },
+  "& .project-icon": {
+    display: "flex",
     alignSelf: "center",
+    svg: {
+      overflow: "visible",
+      height: { xs: "28px", sm: "38px" },
+      width: { xs: "28px", sm: "38px" },
+    },
   },
   "& .project-container": {
     width: { lg: "65%" },
@@ -56,13 +61,13 @@ export const Project = ({
   app,
   value,
   index,
-  icon,
+  iconName,
 }: ProjectProps): JSX.Element => {
   return (
     <Box hidden={value !== index} sx={projectStyles} component="article">
       <Box className="project-title">
         <Typography variant="h3">{title}</Typography>
-        <Box component="img" src={icon.publicURL} />
+        <ProjectIcon iconName={iconName as ProjectIconName} />
       </Box>
       <Divider className="divider" />
       <Box className="project-container">
