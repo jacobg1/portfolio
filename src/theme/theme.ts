@@ -1,9 +1,12 @@
 import { createTheme } from "@mui/material/styles";
 
 import { CustomTheme } from "./theme-type";
-import { goldTheme, silverTheme as defaultTheme } from "./themes";
-import { mainBackground as goldThemeColor } from "./themes/gold";
-import { mainBackground as silverThemeColor } from "./themes/silver";
+import {
+  goldTheme,
+  goldThemeColor,
+  silverTheme as defaultTheme,
+  silverThemeColor,
+} from "./themes";
 import { SiteTheme } from "../types/enum";
 
 const themeMap = {

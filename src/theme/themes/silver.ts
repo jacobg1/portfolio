@@ -46,3 +46,5 @@ export const silverTheme: ThemeConfig = {
     },
   },
 };
+
+export const silverThemeColor = mainBackground;

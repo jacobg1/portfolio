@@ -1,8 +1,8 @@
 import { ThemeConfig } from "../theme-type";
 
 const mainColor = "#b10c0c";
-const secondaryBackground = "#ffffb0";
-export const mainBackground = "#ffffea";
+const secondaryBackground = "#fefed0";
+const mainBackground = "#ffffea";
 
 const border2px = `2px solid ${mainColor}`;
 const border1px = `1px solid ${mainColor}`;
@@ -12,7 +12,7 @@ const buttonColor = "#000000";
 
 export const goldTheme: ThemeConfig = {
   mobileHeader: {
-    backgroundColor: secondaryBackground,
+    backgroundColor: mainBackground,
   },
   header: {
     color: mainColor,
@@ -46,3 +46,5 @@ export const goldTheme: ThemeConfig = {
     },
   },
 };
+
+export const goldThemeColor = mainBackground;
