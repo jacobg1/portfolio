@@ -2,6 +2,8 @@ import { createTheme } from "@mui/material/styles";
 
 import { CustomTheme } from "./theme-type";
 import { goldTheme, silverTheme as defaultTheme } from "./themes";
+import { mainBackground as goldThemeColor } from "./themes/gold";
+import { mainBackground as silverThemeColor } from "./themes/silver";
 import { SiteTheme } from "../types/enum";
 
 const themeMap = {
@@ -177,6 +179,18 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
             },
             "& .skills-section": {
               "& .button-link": skillsButton,
+            },
+          },
+        },
+      },
+      MuiPopover: {
+        styleOverrides: {
+          root: {
+            "& .silver-theme": {
+              backgroundColor: silverThemeColor,
+            },
+            "& .gold-theme": {
+              backgroundColor: goldThemeColor,
             },
           },
         },

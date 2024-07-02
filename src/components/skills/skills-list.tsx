@@ -31,7 +31,11 @@ const skillsListStyles: SxProps = {
 };
 
 const skillsSectionStyles: SxProps = {
-  margin: "30px auto",
+  margin: {
+    sm: "30px auto",
+    md: "55px auto",
+    lg: "100px auto",
+  },
   "& .skills-header": {
     lineHeight: "24px",
     display: "flex",
