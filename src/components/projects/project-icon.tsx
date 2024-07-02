@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 import { ReactComponent as GraphIcon } from "../../images/auto-graph.svg";
 import { ReactComponent as SpaceIcon } from "../../images/space-search.svg";

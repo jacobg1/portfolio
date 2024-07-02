@@ -1,7 +1,8 @@
 import * as React from "react";
 
-import { SxProps, Typography } from "@mui/material";
+import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 import { skillIconsMapping } from "./skill-icons-mapping";
 
