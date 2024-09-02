@@ -1,7 +1,7 @@
 ---
-title: second Post
+title: Second Post
 date: "2024-07-30"
 description: This is the second post.
 ---
 
-Test 2
+Second second second
