@@ -98,6 +98,7 @@ export interface SiteMetadata {
 export interface PageMetaProps {
   metaTitle?: string;
   metaDescription?: string;
+  slug?: string;
 }
 
 export interface ProjectProps {
