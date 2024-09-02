@@ -72,7 +72,7 @@ const AboutPage = ({
 }: PageProps<PageContentWithImage>): JSX.Element => {
   return (
     <Box display="flex">
-      <PageMeta metaTitle="About Me" />
+      <PageMeta metaTitle="About Me" slug="/about/" />
       <Box sx={aboutPageStyles}>
         <Typography variant="h2">{title}</Typography>
         <Divider className="divider" />

@@ -25,7 +25,7 @@ const ProjectsPage = ({
 }: PageProps<PageContent>): JSX.Element => {
   return (
     <>
-      <PageMeta metaTitle="My Projects" />
+      <PageMeta />
       <Box sx={projectPageStyles}>
         <Typography variant="h2">{title}</Typography>
         <Content content={html} />

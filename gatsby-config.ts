@@ -15,7 +15,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: "Jacob Greenwald's Portfolio",
     description:
-      "A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I use insight, imagination and coding fundamentals to create success by drawing on my dedication, persistence and passion for web development",
+      "A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I create success by drawing on my dedication, persistence and passion for building software and customer experiences.",
     keywords: [
       "Jacob Greenwald",
       "Portfolio",
