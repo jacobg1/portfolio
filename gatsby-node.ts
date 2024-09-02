@@ -2,6 +2,7 @@ import path from "path";
 import { GatsbyNode } from "gatsby";
 import { get } from "lodash";
 import { createFilePath } from "gatsby-source-filesystem";
+import { BlogPostsResponse } from "./src/types";
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
@@ -28,20 +29,6 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
     });
   }
 };
-
-interface BlogPostsResponse {
-  errors?: Error[];
-  data?: {
-    allMarkdownRemark: {
-      nodes: {
-        id: string;
-        fields: {
-          slug: string;
-        };
-      }[];
-    };
-  };
-}
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
