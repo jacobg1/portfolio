@@ -125,3 +125,21 @@ export interface ButtonLinkProps {
 export interface ProjectIconProps {
   iconName: ProjectIconName;
 }
+
+type BlogListNode = {
+  id: string;
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    date: string;
+    description: string;
+    title: string;
+  };
+};
+
+export interface BlogsListProps {
+  allMarkdownRemark: {
+    nodes: BlogListNode[];
+  };
+}
