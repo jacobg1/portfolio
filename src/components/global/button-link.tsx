@@ -52,6 +52,7 @@ export const ButtonLink = ({
         target="_blank"
         variant="outlined"
         startIcon={icon}
+        rel="noopener noreferrer"
       >
         <Box className="button-text" component="span">
           {text}
