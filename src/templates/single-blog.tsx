@@ -1,21 +1,29 @@
 import * as React from "react";
 
+import { SxProps } from "@mui/material";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { graphql, PageProps } from "gatsby";
 
 import { Content } from "../components/global/content";
 import { SingleBlogProps } from "../types";
 
-const BlogTemplate = ({
+const singleBlogStyles: SxProps = {
+  "& .gatsby-highlight": {
+    maxWidth: "600px",
+  },
+};
+
+const SingleBlog = ({
   data: { post, next, previous },
 }: PageProps<SingleBlogProps>): JSX.Element => {
   console.log(next, previous);
   console.log(post);
   return (
-    <>
+    <Box sx={singleBlogStyles}>
       <Typography>{post.frontmatter.title}</Typography>
       <Content content={post.html} className="single-blog" />
-    </>
+    </Box>
   );
 };
 
@@ -51,4 +59,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default BlogTemplate;
+export default SingleBlog;

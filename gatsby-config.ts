@@ -101,6 +101,10 @@ const config: GatsbyConfig = {
           },
           "gatsby-remark-static-images",
           "gatsby-remark-emoji-unicode",
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {},
+          },
         ],
       },
     },
