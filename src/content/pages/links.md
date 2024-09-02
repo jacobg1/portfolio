@@ -4,6 +4,9 @@ navLinks:
   - text: My Projects
     destination: /
     newTab: false
+  - text: Blog
+    destination: /blog
+    newTab: false
   - text: About
     destination: /about
     newTab: false

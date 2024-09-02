@@ -16,7 +16,7 @@ const footerStyles: SxProps = {
     display: "flex",
     maxWidth: "700px",
     margin: "auto",
-    height: { xs: "125px", sm: "75px" },
+    height: { xs: "145px", sm: "75px" },
     flexDirection: { xs: "column", sm: "row" },
     justifyContent: { xs: "space-between", sm: "space-around" },
     alignItems: "center",
