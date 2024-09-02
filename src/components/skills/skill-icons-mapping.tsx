@@ -4,7 +4,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import WebIcon from "@mui/icons-material/Web";
 
-import { SkillsEnum } from "../../types/interface";
+import { SkillsEnum } from "../../types";
 
 const frontendColor = "#af0000";
 const backendColor = "#4942ff";

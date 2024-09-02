@@ -5,7 +5,7 @@ import Link from "@mui/material/Link";
 import { useLocation } from "@reach/router";
 import { Link as InternalLink } from "gatsby";
 
-import { NavLinkList, NavLinkItem } from "../../types/interface";
+import { NavLinkList, NavLinkItem } from "../../types";
 
 export const NavLink = ({
   destination,
@@ -21,7 +21,11 @@ export const NavLink = ({
       ? pathname.slice(0, -1)
       : pathname;
 
-    return destination === normalizePath;
+    // TODO: is this a good user experience?
+    const isBlogPath =
+      normalizePath.includes("blog") && destination.includes("blog");
+
+    return destination === normalizePath || isBlogPath;
   };
 
   return (

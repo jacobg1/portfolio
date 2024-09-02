@@ -8,8 +8,7 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
 import { ProjectIcon } from "./project-icon";
-import { ProjectIconName } from "../../types/enum";
-import { ProjectProps } from "../../types/interface";
+import { ProjectProps, ProjectIconName } from "../../types";
 import { ButtonLink } from "../global/button-link";
 import { Content } from "../global/content";
 

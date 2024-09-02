@@ -4,7 +4,7 @@ import type { SxProps } from "@mui/material";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 
-import { ProjectTabsProps } from "../../types/interface";
+import { ProjectTabsProps } from "../../types";
 
 const projectTabsStyle: SxProps = {
   alignItems: "center",

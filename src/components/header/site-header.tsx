@@ -11,7 +11,7 @@ import { Link } from "gatsby";
 import { DesktopHeader } from "./desktop-header";
 import { MobileHeader } from "./mobile-header";
 import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
-import { NavLinkItem } from "../../types/interface";
+import { NavLinkItem } from "../../types";
 
 const appBarStyles: SxProps = {
   padding: { xs: "17px", sm: "20px", md: "25px" },

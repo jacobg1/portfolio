@@ -8,7 +8,7 @@ import { graphql, PageProps } from "gatsby";
 import { Content } from "../components/global/content";
 import { PageMeta } from "../components/global/page-meta";
 import { ProjectsList } from "../components/projects/projects-list";
-import { PageContent } from "../types/interface";
+import { PageContent } from "../types";
 
 const projectPageStyles: SxProps = {
   margin: { xs: "10px 0 0", sm: "25px 0 0" },

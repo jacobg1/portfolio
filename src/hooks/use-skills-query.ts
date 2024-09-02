@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-import { QueryData } from "../types/interface";
+import { QueryData } from "../types";
 
 const skillsQuery = graphql`
   query MySkillsQuery {

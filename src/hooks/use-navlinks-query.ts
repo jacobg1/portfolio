@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import { QueryData } from "../types/interface";
+import { QueryData } from "../types";
 
 const navLinksQuery = graphql`
   query NavLinksQuery {

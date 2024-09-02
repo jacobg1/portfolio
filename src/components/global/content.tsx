@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import type { HtmlString } from "../../types/interface";
+import type { HtmlString } from "../../types";
 
 type ContentProps = { content: HtmlString };
 

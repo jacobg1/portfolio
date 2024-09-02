@@ -4,7 +4,7 @@ import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 
 import { skillIconsMapping } from "./skill-icons-mapping";
-import { Skill, SkillsEnum } from "../../types/interface";
+import { Skill, SkillsEnum } from "../../types";
 import { ButtonLink } from "../global/button-link";
 
 const skillIconStyles: SxProps = {

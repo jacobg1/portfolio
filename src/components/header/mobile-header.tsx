@@ -8,7 +8,7 @@ import Link from "@mui/material/Link";
 import { styled } from "@mui/system";
 import { globalHistory } from "@reach/router";
 
-import { MobileHeaderProps } from "../../types/interface";
+import { MobileHeaderProps } from "../../types";
 import { SiteLinks } from "../global/navigation";
 
 const mobileHeaderStyles: SxProps = {

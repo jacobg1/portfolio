@@ -8,7 +8,7 @@ import { styled } from "@mui/system";
 
 import { SiteLinks } from "./navigation";
 import { useNavLinksQuery } from "../../hooks/use-navlinks-query";
-import { NavLinkItem } from "../../types/interface";
+import { NavLinkItem } from "../../types";
 
 const footerStyles: SxProps = {
   padding: { xs: "16px 17px", sm: 0 },

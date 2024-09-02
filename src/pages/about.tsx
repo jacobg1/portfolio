@@ -10,7 +10,7 @@ import { graphql, PageProps } from "gatsby";
 import { Content } from "../components/global/content";
 import { PageMeta } from "../components/global/page-meta";
 import { SkillsList } from "../components/skills/skills-list";
-import { PageContentWithImage } from "../types/interface";
+import { PageContentWithImage } from "../types";
 
 const aboutPageStyles: SxProps = {
   maxWidth: "1750px",

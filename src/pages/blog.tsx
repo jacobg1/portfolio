@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import { Link, graphql, PageProps } from "gatsby";
 
 import { PageMeta } from "../components/global/page-meta";
-import { BlogsListProps } from "../types/interface";
+import { BlogsListProps } from "../types";
 
 // const aboutPageStyles: SxProps = {};
 

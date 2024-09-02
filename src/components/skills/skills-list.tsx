@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { SingleSkill } from "./single-skill";
 import { SkillIconsKey } from "./skill-icons-key";
 import { useSkillsQuery } from "../../hooks/use-skills-query";
-import { Skill } from "../../types/interface";
+import { Skill } from "../../types";
 
 const skillsListStyles: SxProps = {
   display: "flex",

@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import { MetadataQuery } from "../types/interface";
+import { MetadataQuery } from "../types";
 
 const query = graphql`
   query PageMeta {

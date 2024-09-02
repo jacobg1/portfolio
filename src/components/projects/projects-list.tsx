@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { Project } from "./project-single";
 import { ProjectTabs } from "./project-tabs";
-import { ProjectsListContent } from "../../types/interface";
+import { ProjectsListContent } from "../../types";
 
 export const ProjectsList = (): JSX.Element => {
   const {
