@@ -37,9 +37,13 @@ type NextOrPreviousPost = {
 export interface SingleBlogProps {
   post: {
     html: string;
+    fields: {
+      slug: string;
+    };
     frontmatter: {
       title: string;
       date: string;
+      description: string;
     };
   };
   next: NextOrPreviousPost | null;

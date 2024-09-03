@@ -1,16 +1,28 @@
 import * as React from "react";
 
-import { SxProps } from "@mui/material";
+import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
+import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { graphql, PageProps } from "gatsby";
+import { Link as InternalLink, graphql, PageProps } from "gatsby";
 
 import { Content } from "../components/global/content";
+import { PageMeta } from "../components/global/page-meta";
 import { SingleBlogProps } from "../types";
 
 const singleBlogStyles: SxProps = {
+  width: { md: "70%" },
+  margin: { xs: "30px 0", md: "60px auto" },
   "& .gatsby-highlight": {
-    maxWidth: "600px",
+    maxWidth: "650px",
+  },
+  "& .back": {
+    color: "black",
+    display: "inline-block",
+    marginBottom: "10px",
+  },
+  "& .single-blog p": {
+    maxWidth: "800px",
   },
 };
 
@@ -20,10 +32,20 @@ const SingleBlog = ({
   console.log(next, previous);
   console.log(post);
   return (
-    <Box sx={singleBlogStyles}>
-      <Typography>{post.frontmatter.title}</Typography>
-      <Content content={post.html} className="single-blog" />
-    </Box>
+    <>
+      <PageMeta
+        metaTitle={post.frontmatter.title}
+        slug={post.fields.slug}
+        metaDescription={post.frontmatter.description}
+      />
+      <Box sx={singleBlogStyles}>
+        <InternalLink className="back" to="/blog/">
+          <KeyboardReturnOutlinedIcon fontSize="large" />
+        </InternalLink>
+        <Typography variant="h2">{post.frontmatter.title}</Typography>
+        <Content content={post.html} className="single-blog" />
+      </Box>
+    </>
   );
 };
 
@@ -35,8 +57,12 @@ export const pageQuery = graphql`
   ) {
     post: markdownRemark(id: { eq: $id }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
+        description
         date(formatString: "MMMM DD, YYYY")
       }
     }

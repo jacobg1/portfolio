@@ -184,6 +184,13 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
             "& .skills-section": {
               "& .button-link": skillsButton,
             },
+            "& .blog-post-link": {
+              color: iconColor,
+              textDecoration: "none",
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            },
           },
         },
       },
