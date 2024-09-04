@@ -1,12 +1,13 @@
 import * as React from "react";
 
-import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
 import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Link as InternalLink, graphql, PageProps } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 
+import { NextAndPreviousPost } from "../components/blog/next-and-previous-post";
 import { Content } from "../components/global/content";
+import { GoBack } from "../components/global/go-back";
 import { PageMeta } from "../components/global/page-meta";
 import { SingleBlogProps } from "../types";
 
@@ -15,11 +16,6 @@ const singleBlogStyles: SxProps = {
   margin: { xs: "30px 0", md: "60px auto" },
   "& .gatsby-highlight": {
     maxWidth: "650px",
-  },
-  "& .back": {
-    color: "black",
-    display: "inline-block",
-    marginBottom: "10px",
   },
   "& .single-blog p": {
     maxWidth: "800px",
@@ -39,11 +35,10 @@ const SingleBlog = ({
         metaDescription={post.frontmatter.description}
       />
       <Box sx={singleBlogStyles}>
-        <InternalLink className="back" to="/blog/">
-          <KeyboardReturnOutlinedIcon fontSize="large" />
-        </InternalLink>
+        <GoBack page="/blog/" />
         <Typography variant="h2">{post.frontmatter.title}</Typography>
         <Content content={post.html} className="single-blog" />
+        <NextAndPreviousPost previousPost={previous} nextPost={next} />
       </Box>
     </>
   );

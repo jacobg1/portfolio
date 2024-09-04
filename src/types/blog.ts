@@ -28,11 +28,19 @@ export interface BlogPostsResponse {
   data?: BlogsListProps<BlogResposeNode>;
 }
 
-type NextOrPreviousPost = {
+export type NextOrPreviousPost = {
+  fields: {
+    slug: string;
+  };
   frontmatter: {
     title: string;
   };
 };
+
+export interface NextAndPreviousPostProps {
+  previousPost: NextOrPreviousPost | null;
+  nextPost: NextOrPreviousPost | null;
+}
 
 export interface SingleBlogProps {
   post: {
@@ -48,4 +56,8 @@ export interface SingleBlogProps {
   };
   next: NextOrPreviousPost | null;
   previous: NextOrPreviousPost | null;
+}
+
+export interface PostButtonProps {
+  post: NextOrPreviousPost | null;
 }
