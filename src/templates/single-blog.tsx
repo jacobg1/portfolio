@@ -17,8 +17,11 @@ const singleBlogStyles: SxProps = {
   "& .gatsby-highlight": {
     maxWidth: "650px",
   },
-  "& .single-blog p": {
-    maxWidth: "800px",
+  "& .single-blog": {
+    paddingBottom: "30px",
+    "& p": {
+      maxWidth: "800px",
+    },
   },
 };
 

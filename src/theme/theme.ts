@@ -24,6 +24,7 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
     button,
     iconColor,
     skillsButton,
+    text,
   } = themeMap?.[siteTheme] || defaultTheme;
 
   let theme = createTheme();
@@ -189,6 +190,20 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
               textDecoration: "none",
               "&:hover": {
                 textDecoration: "underline",
+              },
+            },
+            "& .next-post-link": {
+              color: text.color,
+              backgroundColor: "#ffffff",
+              border: `2px solid ${iconColor}`,
+              "&:hover": {
+                backgroundColor: "rgba(94, 103, 111, 0.04)",
+              },
+              "&:active": {
+                color: text.color,
+              },
+              "& .MuiSvgIcon-root": {
+                color: iconColor,
               },
             },
           },

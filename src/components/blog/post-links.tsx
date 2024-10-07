@@ -11,13 +11,16 @@ import type { PostButtonProps } from "../../types";
 export const PreviousPostLink = ({
   post,
 }: PostButtonProps): JSX.Element | null => {
-  if (!post) return null;
+  // Return an empty div to keep the next post button right aligned
+  if (!post) return <Box />;
 
   return (
-    <Box>
-      <InternalLink className="blog-link" to={post.fields.slug}>
+    <Box className="next-post-container">
+      <InternalLink className="next-post-link" to={post.fields.slug}>
         <ArrowBackIcon />
-        <Typography variant="body1">Previous</Typography>
+        <Typography className="prev-post-text" variant="subtitle1">
+          previous
+        </Typography>
       </InternalLink>
     </Box>
   );
@@ -27,9 +30,11 @@ export const NextPostLink = ({ post }: PostButtonProps): JSX.Element | null => {
   if (!post) return null;
 
   return (
-    <Box>
-      <InternalLink className="blog-link" to={post.fields.slug}>
-        <Typography variant="body1">Next</Typography>
+    <Box className="next-post-container">
+      <InternalLink className="next-post-link" to={post.fields.slug}>
+        <Typography className="next-post-text" variant="subtitle1">
+          next
+        </Typography>
         <ArrowForwardIcon />
       </InternalLink>
     </Box>

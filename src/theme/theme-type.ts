@@ -40,6 +40,9 @@ declare module "@mui/material/styles" {
 }
 
 export interface ThemeConfig {
+  text: {
+    color: string;
+  };
   mobileHeader: {
     backgroundColor: string;
   };

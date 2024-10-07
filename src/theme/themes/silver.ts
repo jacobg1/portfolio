@@ -9,8 +9,12 @@ const border1px = `1px solid ${mainColor}`;
 
 const buttonBackground = "#ffffff";
 const buttonColor = "#000000";
+const textColor = "#000000";
 
 export const silverTheme: ThemeConfig = {
+  text: {
+    color: textColor,
+  },
   mobileHeader: {
     backgroundColor: mainBackground,
   },
