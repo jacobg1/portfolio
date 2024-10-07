@@ -18,7 +18,7 @@ const singleBlogStyles: SxProps = {
     maxWidth: "650px",
   },
   "& .single-blog": {
-    paddingBottom: "30px",
+    paddingBottom: "40px",
     "& p": {
       maxWidth: "800px",
     },
@@ -28,8 +28,6 @@ const singleBlogStyles: SxProps = {
 const SingleBlog = ({
   data: { post, next, previous },
 }: PageProps<SingleBlogProps>): JSX.Element => {
-  console.log(next, previous);
-  console.log(post);
   return (
     <>
       <PageMeta
