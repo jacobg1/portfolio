@@ -19,7 +19,7 @@ export const PreviousPostLink = ({
       <InternalLink className="next-post-link" to={post.fields.slug}>
         <ArrowBackIcon />
         <Typography className="prev-post-text" variant="subtitle1">
-          previous
+          prev
         </Typography>
       </InternalLink>
     </Box>
