@@ -17,11 +17,17 @@ const singleBlogStyles: SxProps = {
   "& .gatsby-highlight": {
     maxWidth: "650px",
   },
-  "& .single-blog": {
+  "& .single-blog-content": {
     paddingBottom: "40px",
     "& p": {
       maxWidth: "800px",
     },
+  },
+  "& pre[class*=language-]": {
+    margin: "30px 0",
+  },
+  "& code": {
+    padding: "5px",
   },
 };
 
@@ -35,10 +41,10 @@ const SingleBlog = ({
         slug={post.fields.slug}
         metaDescription={post.frontmatter.description}
       />
-      <Box sx={singleBlogStyles}>
+      <Box className="single-blog" sx={singleBlogStyles}>
         <GoBack page="/blog/" />
         <Typography variant="h2">{post.frontmatter.title}</Typography>
-        <Content content={post.html} className="single-blog" />
+        <Content content={post.html} className="single-blog-content" />
         <NextAndPreviousPost previousPost={previous} nextPost={next} />
       </Box>
     </>

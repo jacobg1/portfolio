@@ -54,6 +54,7 @@ const BlogListPage = ({
             <Typography variant="body1">{frontmatter.description}</Typography>
           </Box>
         ))}
+        <Typography variant="body1">More posts coming soon!</Typography>
       </Box>
     </>
   );
