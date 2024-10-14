@@ -36,7 +36,7 @@ If successful you should see the version of homebrew outputted in your terminal,
 Homebrew 3.1.11
 ```
 
-Now that homebrew is installed you can install NodeJS by using the following command.
+Once homebrew is installed you can install NodeJS by using the following command.
 
 ```bash
 brew install node
