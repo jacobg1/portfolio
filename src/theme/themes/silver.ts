@@ -2,7 +2,7 @@ import { ThemeConfig } from "../theme-type";
 
 const mainColor = "#014b95";
 const secondaryBackground = "#e7e7e7";
-export const mainBackground = "#f5f5f5";
+const mainBackground = "#f5f5f5";
 
 const border2px = `2px solid ${mainColor}`;
 const border1px = `1px solid ${mainColor}`;

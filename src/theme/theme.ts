@@ -168,14 +168,20 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
               minWidth: "320px",
               ...main,
             },
-            "& .page-content": {
+            "& .page-content, .single-blog": {
               p: {
                 color: "#000000",
               },
               a: {
                 textDecoration: "none",
-                color: "#014b95",
+                color: iconColor,
                 fontWeight: 600,
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              },
+              "& .next-post-link:hover": {
+                textDecoration: "none",
               },
             },
             "& .divider": divider,
