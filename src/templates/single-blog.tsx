@@ -15,7 +15,7 @@ const singleBlogStyles: SxProps = {
   width: { md: "70%" },
   margin: { xs: "30px 0", md: "60px auto" },
   "& .gatsby-highlight": {
-    maxWidth: "650px",
+    maxWidth: "800px",
   },
   "& .single-blog-content": {
     paddingBottom: "40px",
