@@ -2,6 +2,7 @@
 title: Installing JavaScript
 date: "2024-10-14"
 description: This post will detail how to install JavaScript on your (mac) computer.
+postOrder: 1
 ---
 
 JavaScript is a amazing language that runs in both the browser and the server.  Wondering what you can do with JavaScript?  With JS you can:

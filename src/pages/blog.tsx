@@ -64,7 +64,10 @@ export const pageQuery = graphql`
   query BlogListQuery {
     allMarkdownRemark(
       filter: { fields: { collection: { eq: "blog-posts" } } }
-      sort: { frontmatter: { date: DESC } }
+      sort: [
+        { frontmatter: { postOrder: ASC } }
+        { frontmatter: { date: DESC } }
+      ]
     ) {
       nodes {
         id

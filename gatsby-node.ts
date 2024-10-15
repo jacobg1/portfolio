@@ -41,7 +41,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
     {
       allMarkdownRemark(
         filter: { fields: { collection: { eq: "blog-posts" } } }
-        sort: { frontmatter: { date: DESC } }
+        sort: [
+          { frontmatter: { postOrder: ASC } }
+          { frontmatter: { date: DESC } }
+        ]
       ) {
         nodes {
           id
