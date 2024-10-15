@@ -26,9 +26,6 @@ const singleBlogStyles: SxProps = {
   "& pre[class*=language-]": {
     margin: "30px 0",
   },
-  "& code": {
-    padding: "5px",
-  },
 };
 
 const SingleBlog = ({
