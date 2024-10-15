@@ -21,7 +21,6 @@ export const NavLink = ({
       ? pathname.slice(0, -1)
       : pathname;
 
-    // TODO: is this a good user experience?
     const isBlogPath =
       normalizePath.includes("blog") && destination.includes("blog");
 
