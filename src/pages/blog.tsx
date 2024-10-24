@@ -38,7 +38,6 @@ const BlogListPage = ({
     postsData: { nodes },
   },
 }: PageProps<BlogsListProps>): JSX.Element => {
-  console.log("nodes", nodes);
   return (
     <>
       <PageMeta metaTitle="Blog" />

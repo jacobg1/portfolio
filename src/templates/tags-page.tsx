@@ -13,7 +13,7 @@ import { TagsPageProps } from "../types";
 // const tagsPageStyles: SxProps = {};
 
 const TagsPage = ({ data }: PageProps<TagsPageProps>): JSX.Element => {
-  console.log(data.allMarkdownRemark.totalCount);
+  console.log("TODO", data);
   return (
     <>
       <PageMeta metaTitle="test" slug="test" metaDescription="test" />

@@ -3,10 +3,7 @@ import { GatsbyNode } from "gatsby";
 import { get } from "lodash";
 import { createFilePath } from "gatsby-source-filesystem";
 import { BlogPostsResponse } from "./src/types";
-
-function createTagPageSlug(tagName: string) {
-  return tagName.toLocaleLowerCase().replace(/ /g, "-");
-}
+import { createTagPageSlug } from "./src/utils";
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
@@ -99,7 +96,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   tags.forEach((tag) => {
     createPage({
-      path: `/blog/tags/${createTagPageSlug(tag.fieldValue)}/`,
+      path: `/tags/${createTagPageSlug(tag.fieldValue)}/`,
       component: path.resolve("./src/templates/tags-page.tsx"),
       context: {
         tag: tag.fieldValue,

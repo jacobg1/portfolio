@@ -3,6 +3,9 @@ import * as React from "react";
 import type { SxProps } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import { Link as InternalLink } from "gatsby";
+
+import { createTagPageLink } from "../../utils";
 
 const tagsListStyles: SxProps = {
   margin: "15px 0 0 0",
@@ -28,8 +31,10 @@ export const TagsList = ({ tags }: TagsListProps): JSX.Element | null => {
           sx={chipStyles}
           key={tag}
           label={tag.trim()}
+          component={InternalLink}
+          to={createTagPageLink(tag)}
           variant="outlined"
-          onClick={() => console.log("test")}
+          clickable
         />
       ))}
     </Stack>
