@@ -227,6 +227,13 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
           },
         },
       },
+      MuiChip: {
+        styleOverrides: {
+          outlined: {
+            border: button.border,
+          },
+        },
+      },
     },
   });
 

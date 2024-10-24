@@ -9,7 +9,6 @@ const tagsListStyles: SxProps = {
 };
 
 const chipStyles: SxProps = {
-  border: "2px solid #014b95",
   color: "#000000",
   paddingTop: "4px",
   fontWeight: 600,
