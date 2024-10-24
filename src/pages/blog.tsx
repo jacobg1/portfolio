@@ -35,7 +35,7 @@ const blogListProps: SxProps = {
 
 const BlogListPage = ({
   data: {
-    allMarkdownRemark: { nodes },
+    postsData: { nodes },
   },
 }: PageProps<BlogsListProps>): JSX.Element => {
   console.log("nodes", nodes);
@@ -65,7 +65,7 @@ const BlogListPage = ({
 
 export const pageQuery = graphql`
   query BlogListQuery {
-    allMarkdownRemark(
+    postsData: allMarkdownRemark(
       filter: { fields: { collection: { eq: "blog-posts" } } }
       sort: [
         { frontmatter: { postOrder: ASC } }

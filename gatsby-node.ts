@@ -4,6 +4,10 @@ import { get } from "lodash";
 import { createFilePath } from "gatsby-source-filesystem";
 import { BlogPostsResponse } from "./src/types";
 
+function createTagPageSlug(tagName: string) {
+  return tagName.toLocaleLowerCase().replace(/ /g, "-");
+}
+
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
@@ -39,7 +43,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const blogPosts: BlogPostsResponse = await graphql(`
     {
-      allMarkdownRemark(
+      postsData: allMarkdownRemark(
         filter: { fields: { collection: { eq: "blog-posts" } } }
         sort: [
           { frontmatter: { postOrder: ASC } }
@@ -53,6 +57,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
           }
         }
       }
+      tagsData: allMarkdownRemark {
+        group(field: { frontmatter: { tags: SELECT } }) {
+          fieldValue
+        }
+      }
     }
   `);
 
@@ -64,7 +73,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     return;
   }
 
-  const posts = get(blogPosts, "data.allMarkdownRemark.nodes");
+  const posts = get(blogPosts, "data.postsData.nodes");
 
   if (!posts?.length) {
     return;
@@ -78,6 +87,22 @@ export const createPages: GatsbyNode["createPages"] = async ({
         id: post.id,
         previousPostId: posts[idx - 1]?.id ?? null,
         nextPostId: posts[idx + 1]?.id ?? null,
+      },
+    });
+  });
+
+  const tags = get(blogPosts, "data.tagsData.group");
+
+  if (!tags?.length) {
+    return;
+  }
+
+  tags.forEach((tag) => {
+    createPage({
+      path: `/blog/tags/${createTagPageSlug(tag.fieldValue)}/`,
+      component: path.resolve("./src/templates/tags-page.tsx"),
+      context: {
+        tag: tag.fieldValue,
       },
     });
   });

@@ -7,14 +7,21 @@ type BlogListNode = {
     date: string;
     description: string;
     title: string;
-    tags: string;
+    tags: string[];
     skillLevel: string;
   };
 };
 
+interface TagsData {
+  fieldValue: string;
+}
+
 export interface BlogsListProps<Node = BlogListNode> {
-  allMarkdownRemark: {
+  postsData: {
     nodes: Node[];
+  };
+  tagsData: {
+    group: TagsData[];
   };
 }
 
@@ -54,8 +61,6 @@ export interface SingleBlogProps {
       title: string;
       date: string;
       description: string;
-      // tags: string;
-      // skillLevel: string;
     };
   };
   next: NextOrPreviousPost | null;
@@ -64,4 +69,22 @@ export interface SingleBlogProps {
 
 export interface PostButtonProps {
   post: NextOrPreviousPost | null;
+}
+
+type TagsPageNode = {
+  fields: {
+    slug: string;
+  };
+  frontmatter: { title: string };
+};
+
+type TagsPageEdge = {
+  node: TagsPageNode;
+};
+
+export interface TagsPageProps {
+  allMarkdownRemark: {
+    edges: TagsPageEdge[];
+    totalCount: number;
+  };
 }

@@ -15,17 +15,15 @@ const chipStyles: SxProps = {
 };
 
 interface TagsListProps {
-  tags: string;
+  tags: string[];
 }
 
 export const TagsList = ({ tags }: TagsListProps): JSX.Element | null => {
-  const tagsArray = tags?.split(",");
-
-  if (!tagsArray?.length) return null;
+  if (!tags?.length) return null;
 
   return (
     <Stack sx={tagsListStyles} direction="row" spacing={2}>
-      {tagsArray.map((tag) => (
+      {tags.map((tag) => (
         <Chip
           sx={chipStyles}
           key={tag}
