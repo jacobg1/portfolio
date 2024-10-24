@@ -7,6 +7,8 @@ type BlogListNode = {
     date: string;
     description: string;
     title: string;
+    tags: string;
+    skillLevel: string;
   };
 };
 
@@ -52,6 +54,8 @@ export interface SingleBlogProps {
       title: string;
       date: string;
       description: string;
+      // tags: string;
+      // skillLevel: string;
     };
   };
   next: NextOrPreviousPost | null;

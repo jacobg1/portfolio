@@ -6,6 +6,7 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import { Link as InternalLink, graphql, PageProps } from "gatsby";
 
+import { TagsList } from "../components/blog/tags-list";
 import { PageMeta } from "../components/global/page-meta";
 import { BlogsListProps } from "../types";
 
@@ -37,6 +38,7 @@ const BlogListPage = ({
     allMarkdownRemark: { nodes },
   },
 }: PageProps<BlogsListProps>): JSX.Element => {
+  console.log("nodes", nodes);
   return (
     <>
       <PageMeta metaTitle="Blog" />
@@ -52,6 +54,7 @@ const BlogListPage = ({
               {frontmatter.date}
             </Typography>
             <Typography variant="body1">{frontmatter.description}</Typography>
+            <TagsList tags={frontmatter.tags} />
           </Box>
         ))}
         <Typography variant="body1">More posts coming soon!</Typography>
@@ -78,6 +81,8 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
+          skillLevel
         }
       }
     }

@@ -3,6 +3,8 @@ title: Running JavaScript
 date: "2024-10-15"
 description: Let's run some JavaScript!
 postOrder: 2
+tags: JavaScript, NodeJS
+skillLevel: ++
 ---
 
 Once node is installed on your computer, you can use it to run the code in a JavaScript file.  Let's give it a try!
