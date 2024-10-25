@@ -23,7 +23,7 @@
     "@mui/material": "^5.15.20",
     "@svgr/webpack": "^8.1.0",
     "axios": "^1.7.2",
-    "gatsby": "^5.13.6",
+    "gatsby": "^5.13.7",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-emotion": "^8.13.1",
     "gatsby-plugin-image": "^3.13.1",
