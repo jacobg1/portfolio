@@ -14,7 +14,8 @@ const tagsListStyles: SxProps = {
 
 const chipStyles: SxProps = {
   color: "#000000",
-  fontWeight: 600,
+  backgroundColor: "#FFFFFF",
+  fontWeight: 900,
   "& .MuiChip-label": {
     paddingTop: "4px",
   },

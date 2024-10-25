@@ -168,6 +168,9 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
               minWidth: "320px",
               ...main,
             },
+            "& .back": {
+              color: iconColor,
+            },
             "& .page-content, .single-blog": {
               p: {
                 color: "#000000",

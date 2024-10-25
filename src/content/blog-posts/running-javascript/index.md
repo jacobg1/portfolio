@@ -3,7 +3,7 @@ title: Running JavaScript
 date: "2024-10-15"
 description: Let's run some JavaScript!
 postOrder: 2
-tags: ["JavaScript", "NodeJS", "Basics"]
+tags: ["JavaScript", "Basics", "NodeJS"]
 skillLevel: ++
 ---
 

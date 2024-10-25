@@ -3,7 +3,7 @@ title: Installing JavaScript
 date: "2024-10-14"
 description: This post will detail how to install JavaScript on your (mac) computer.
 postOrder: 1
-tags: ["JavaScript", "NodeJS", "Basics"]
+tags: ["JavaScript", "Basics", "Setup"]
 skillLevel: +
 ---
 

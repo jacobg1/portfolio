@@ -7,7 +7,6 @@ import { Link as InternalLink } from "gatsby";
 
 const goBackStyles: SxProps = {
   "& .back": {
-    color: "black",
     display: "inline-block",
     marginBottom: "10px",
   },

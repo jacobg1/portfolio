@@ -1,15 +1,17 @@
-type BlogListNode = {
+type BlogFrontmatter = {
+  date: string;
+  description: string;
+  title: string;
+  tags: string[];
+  skillLevel: string;
+};
+
+export type BlogListNode = {
   id: string;
   fields: {
     slug: string;
   };
-  frontmatter: {
-    date: string;
-    description: string;
-    title: string;
-    tags: string[];
-    skillLevel: string;
-  };
+  frontmatter: BlogFrontmatter;
 };
 
 interface TagsData {
@@ -72,10 +74,11 @@ export interface PostButtonProps {
 }
 
 type TagsPageNode = {
+  id: string;
   fields: {
     slug: string;
   };
-  frontmatter: { title: string };
+  frontmatter: BlogFrontmatter;
 };
 
 type TagsPageEdge = {
