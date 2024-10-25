@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import AdsClickIcon from "@mui/icons-material/AdsClick";
 import type { SxProps } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
@@ -13,8 +14,14 @@ const tagsListStyles: SxProps = {
 
 const chipStyles: SxProps = {
   color: "#000000",
-  paddingTop: "4px",
   fontWeight: 600,
+  "& .MuiChip-label": {
+    paddingTop: "4px",
+  },
+  "& .MuiChip-icon": {
+    color: "#000000",
+    fontSize: "22px",
+  },
 };
 
 interface TagsListProps {
@@ -30,6 +37,7 @@ export const TagsList = ({ tags }: TagsListProps): JSX.Element | null => {
         <Chip
           sx={chipStyles}
           key={tag}
+          icon={<AdsClickIcon />}
           label={tag.trim()}
           component={InternalLink}
           to={createTagPageLink(tag)}
