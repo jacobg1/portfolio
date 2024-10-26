@@ -3,13 +3,13 @@ import * as React from "react";
 import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { graphql, PageProps } from "gatsby";
+import { graphql, type PageProps } from "gatsby";
 
 import { BlogListItem } from "../components/blog/blog-list-item";
 import { GoBack } from "../components/global/go-back";
 import { PageMeta } from "../components/global/page-meta";
 import { TitleWithDivider } from "../components/global/title-with-divider";
-import { TagsPageProps } from "../types";
+import { SingleTagPageProps } from "../types";
 import { createTagPageLink, pluralWord } from "../utils";
 
 const singleTagStyles: SxProps = {
@@ -25,7 +25,7 @@ const SingleTag = ({
     allMarkdownRemark: { totalCount, edges: posts },
   },
   pageContext: { tag },
-}: PageProps<TagsPageProps, { tag: string }>): JSX.Element => {
+}: PageProps<SingleTagPageProps, { tag: string }>): JSX.Element => {
   const tagTitle = `Tag - ${tag}`;
   const tagTotal = `${totalCount} ${pluralWord(totalCount, "post")}`;
   const tagDescription = `${tagTotal} with tag - ${tag}`;

@@ -73,7 +73,7 @@ export interface PostButtonProps {
   post: NextOrPreviousPost | null;
 }
 
-type TagsPageNode = {
+type SingleTagNode = {
   id: string;
   fields: {
     slug: string;
@@ -81,13 +81,22 @@ type TagsPageNode = {
   frontmatter: BlogFrontmatter;
 };
 
-type TagsPageEdge = {
-  node: TagsPageNode;
+type SingleTagEdge = {
+  node: SingleTagNode;
 };
 
-export interface TagsPageProps {
+export interface SingleTagPageProps {
   allMarkdownRemark: {
-    edges: TagsPageEdge[];
+    edges: SingleTagEdge[];
     totalCount: number;
+  };
+}
+
+export interface TagsPageProps {
+  tagsData: {
+    group: {
+      fieldValue: string;
+      totalCount: number;
+    }[];
   };
 }

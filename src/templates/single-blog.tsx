@@ -3,7 +3,7 @@ import * as React from "react";
 import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { graphql, PageProps } from "gatsby";
+import { graphql, type PageProps } from "gatsby";
 
 import { NextAndPreviousPost } from "../components/blog/next-and-previous-post";
 import { Content } from "../components/global/content";

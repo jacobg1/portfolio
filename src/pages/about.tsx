@@ -4,7 +4,7 @@ import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import { graphql, PageProps } from "gatsby";
+import { graphql, type PageProps } from "gatsby";
 // import { GatsbyImage } from "gatsby-plugin-image";
 
 import { Content } from "../components/global/content";

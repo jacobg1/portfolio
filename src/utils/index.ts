@@ -10,3 +10,17 @@ export function pluralWord(num: number, word: string): string {
   if (num === 1) return word;
   return `${word}s`;
 }
+
+export const includesBlog = (
+  normalizePath: string,
+  destination: string
+): boolean => {
+  return normalizePath.includes("blog") && destination.includes("blog");
+};
+
+export const includesTags = (
+  normalizePath: string,
+  destination: string
+): boolean => {
+  return normalizePath.includes("tags") && destination.includes("blog");
+};

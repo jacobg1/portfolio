@@ -6,6 +6,7 @@ import { useLocation } from "@reach/router";
 import { Link as InternalLink } from "gatsby";
 
 import { NavLinkList, NavLinkItem } from "../../types";
+import { includesBlog, includesTags } from "../../utils";
 
 export const NavLink = ({
   destination,
@@ -22,7 +23,8 @@ export const NavLink = ({
       : pathname;
 
     const isBlogPath =
-      normalizePath.includes("blog") && destination.includes("blog");
+      includesBlog(normalizePath, destination) ||
+      includesTags(normalizePath, destination);
 
     return destination === normalizePath || isBlogPath;
   };
@@ -59,9 +61,9 @@ export const NavLink = ({
 export const SiteLinks = ({ navLinks }: NavLinkList): JSX.Element => {
   return (
     <>
-      {navLinks.map((link: NavLinkItem, i: number) => {
-        return <NavLink key={`site-link-${i}`} {...link} />;
-      })}
+      {navLinks.map((link: NavLinkItem) => (
+        <NavLink key={link.text} {...link} />
+      ))}
     </>
   );
 };
