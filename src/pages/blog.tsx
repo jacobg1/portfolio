@@ -11,6 +11,7 @@ import { TitleWithDivider } from "../components/global/title-with-divider";
 import { BlogsListProps } from "../types";
 
 const blogListStyles: SxProps = {
+  maxWidth: "800px",
   width: { md: "70%" },
   margin: { xs: "30px 0", md: "60px auto" },
 };

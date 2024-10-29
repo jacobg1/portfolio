@@ -12,16 +12,11 @@ import { PageMeta } from "../components/global/page-meta";
 import { SingleBlogProps } from "../types";
 
 const singleBlogStyles: SxProps = {
+  maxWidth: "800px",
   width: { md: "70%" },
   margin: { xs: "30px 0", md: "60px auto" },
-  "& .gatsby-highlight": {
-    maxWidth: "800px",
-  },
   "& .single-blog-content": {
     paddingBottom: "40px",
-    "& p": {
-      maxWidth: "800px",
-    },
   },
   "& pre[class*=language-]": {
     margin: "30px 0",

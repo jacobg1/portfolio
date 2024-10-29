@@ -3,7 +3,7 @@ import * as React from "react";
 import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { graphql, type PageProps } from "gatsby";
+import { graphql, Link as InternalLink, type PageProps } from "gatsby";
 
 import { BlogListItem } from "../components/blog/blog-list-item";
 import { GoBack } from "../components/global/go-back";
@@ -13,11 +13,17 @@ import { SingleTagPageProps } from "../types";
 import { createTagPageLink, pluralWord } from "../utils";
 
 const singleTagStyles: SxProps = {
+  maxWidth: "800px",
   width: { md: "70%" },
   margin: { xs: "30px 0", md: "60px auto" },
-  "& .tag-description": {
-    paddingTop: "20px",
-  },
+};
+
+const tagInfoContainer: SxProps = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  maxWidth: 800,
+  paddingTop: "20px",
 };
 
 const SingleTag = ({
@@ -40,10 +46,14 @@ const SingleTag = ({
       <Box sx={singleTagStyles}>
         <GoBack page="/blog/" />
         <TitleWithDivider title={tagTitle} />
-        <Typography className="tag-description" variant="body1">
-          {tagTotal}
-        </Typography>
-
+        <Box sx={tagInfoContainer}>
+          <Typography className="tag-description" variant="body1">
+            {tagTotal}
+          </Typography>
+          <InternalLink to="/tags/" className="blog-post-link">
+            All tags
+          </InternalLink>
+        </Box>
         {posts.map(({ node: { id, ...post } }) => (
           <BlogListItem key={id} {...post} />
         ))}
