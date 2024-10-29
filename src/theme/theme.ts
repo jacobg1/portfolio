@@ -170,6 +170,7 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
             },
             "& .back": {
               color: iconColor,
+              cursor: "pointer",
             },
             "& .page-content, .single-blog": {
               p: {
@@ -234,6 +235,13 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
         styleOverrides: {
           outlined: {
             border: button.border,
+          },
+        },
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            backgroundColor: header.backgroundColor,
           },
         },
       },
