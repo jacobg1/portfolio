@@ -16,6 +16,9 @@ const singleTagStyles: SxProps = {
   maxWidth: "800px",
   width: { md: "70%" },
   margin: { xs: "30px 0", md: "60px auto" },
+  "& .all-tags-link": {
+    paddingBottom: "4px",
+  },
 };
 
 const tagInfoContainer: SxProps = {
@@ -23,7 +26,7 @@ const tagInfoContainer: SxProps = {
   justifyContent: "space-between",
   alignItems: "center",
   maxWidth: 800,
-  paddingTop: "20px",
+  paddingTop: "5px",
 };
 
 const SingleTag = ({
@@ -50,7 +53,7 @@ const SingleTag = ({
           <Typography className="tag-description" variant="body1">
             {tagTotal}
           </Typography>
-          <InternalLink to="/tags/" className="blog-post-link">
+          <InternalLink to="/tags/" className="all-tags-link">
             All tags
           </InternalLink>
         </Box>

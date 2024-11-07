@@ -195,7 +195,8 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
             "& .skills-section": {
               "& .button-link": skillsButton,
             },
-            "& .blog-post-link": {
+            "& .blog-post-link, .all-tags-link": {
+              fontWeight: 600,
               color: iconColor,
               textDecoration: "none",
               "&:hover": {
