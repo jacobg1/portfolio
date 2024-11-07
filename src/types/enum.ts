@@ -8,3 +8,5 @@ export enum ProjectIconName {
   SPACE = "space",
   GRAPH = "graph",
 }
+
+export const SITE_THEME_KEY = "jacob-site-theme";

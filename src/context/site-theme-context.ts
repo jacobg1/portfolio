@@ -1,10 +1,10 @@
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 
 import { SiteTheme } from "../types/enum";
 
 interface ColorThemeContextType {
   siteTheme: SiteTheme;
-  setSiteTheme: (siteTheme: SiteTheme) => void;
+  setSiteTheme: Dispatch<SetStateAction<SiteTheme | null>>;
 }
 
 export const SiteThemeContext = createContext<ColorThemeContextType>({

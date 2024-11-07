@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
+
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
-import { ProjectIconName } from "./enum";
+import { ProjectIconName, SiteTheme } from "./enum";
 
 export interface NavLinkItem {
   text: string;
@@ -125,4 +127,12 @@ export interface ButtonLinkProps {
 
 export interface ProjectIconProps {
   iconName: ProjectIconName;
+}
+
+export interface ThemeSelectorButtonProps {
+  label: string;
+  themeOption: SiteTheme;
+  selectedTheme: SiteTheme;
+  setSiteTheme: Dispatch<SetStateAction<SiteTheme | null>>;
+  handleClose: () => void;
 }

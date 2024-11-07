@@ -4,15 +4,15 @@ import ContrastIcon from "@mui/icons-material/Contrast";
 import { type SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Chip from "@mui/material/Chip";
 import Popover from "@mui/material/Popover";
 
+import { ThemeSelectorButton } from "./theme-selector-button";
 import { SiteThemeContext } from "../../context/site-theme-context";
 import { SiteTheme } from "../../types/enum";
 
 const themeSelectorStyles: SxProps = {
   marginBottom: "20px",
-  "& .theme-selector-button": {
+  "& .select-theme-button": {
     marginBottom: 0,
     lineHeight: 0,
     textTransform: "none",
@@ -70,35 +70,23 @@ export function ThemeSelector(): JSX.Element {
           horizontal: "left",
         }}
       >
-        <Chip
-          className="silver-theme"
-          sx={{
-            ...(siteTheme === SiteTheme.SILVER && {
-              border: "2px solid",
-            }),
-          }}
-          onClick={() => {
-            setSiteTheme(SiteTheme.SILVER);
-            handleClose();
-          }}
+        <ThemeSelectorButton
           label="Silver"
+          themeOption={SiteTheme.SILVER}
+          selectedTheme={siteTheme}
+          setSiteTheme={setSiteTheme}
+          handleClose={handleClose}
         />
-        <Chip
-          className="gold-theme"
-          sx={{
-            ...(siteTheme === SiteTheme.GOLD && {
-              border: "2px solid",
-            }),
-          }}
-          onClick={() => {
-            setSiteTheme(SiteTheme.GOLD);
-            handleClose();
-          }}
+        <ThemeSelectorButton
           label="Gold"
+          themeOption={SiteTheme.GOLD}
+          selectedTheme={siteTheme}
+          setSiteTheme={setSiteTheme}
+          handleClose={handleClose}
         />
       </Popover>
       <Button
-        className="theme-selector-button"
+        className="select-theme-button"
         onClick={handleClick}
         aria-describedby={id}
         startIcon={<ContrastIcon />}
