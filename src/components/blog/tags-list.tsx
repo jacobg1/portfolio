@@ -33,7 +33,7 @@ export const TagsList = ({ tags }: TagsListProps): JSX.Element | null => {
   if (!tags?.length) return null;
 
   return (
-    <Stack sx={tagsListStyles} direction="row" spacing={2}>
+    <Stack sx={tagsListStyles} direction="row" spacing={{ xs: 0.4, sm: 2 }}>
       {tags.map((tag) => (
         <Chip
           sx={chipStyles}
