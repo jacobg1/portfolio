@@ -2,6 +2,8 @@ import { createTheme } from "@mui/material/styles";
 
 import { CustomTheme } from "./theme-type";
 import {
+  bronzeTheme,
+  bronzeThemeColor,
   goldTheme,
   goldThemeColor,
   silverTheme as defaultTheme,
@@ -12,6 +14,7 @@ import { SiteTheme } from "../types/enum";
 const themeMap = {
   [SiteTheme.SILVER]: defaultTheme,
   [SiteTheme.GOLD]: goldTheme,
+  [SiteTheme.BRONZE]: bronzeTheme,
 };
 
 export function getTheme(siteTheme: SiteTheme): CustomTheme {
@@ -228,6 +231,9 @@ export function getTheme(siteTheme: SiteTheme): CustomTheme {
             },
             "& .gold-theme": {
               backgroundColor: goldThemeColor,
+            },
+            "& .bronze-theme": {
+              backgroundColor: bronzeThemeColor,
             },
           },
         },

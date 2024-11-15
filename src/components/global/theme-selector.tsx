@@ -28,8 +28,9 @@ const themeSelectorStyles: SxProps = {
 
 const themePopoverStyles: SxProps = {
   "& .MuiPopover-paper": {
-    width: "200px",
-    padding: "15px 0",
+    width: "100%",
+    maxWidth: "330px",
+    padding: "15px 5px",
     display: "flex",
     justifyContent: "space-evenly",
   },
@@ -38,6 +39,9 @@ const themePopoverStyles: SxProps = {
     paddingTop: "2px",
     paddingRight: "25px",
     fontWeight: 900,
+  },
+  "& .MuiChip-root": {
+    width: "31%",
   },
 };
 
@@ -80,6 +84,13 @@ export function ThemeSelector(): JSX.Element {
         <ThemeSelectorButton
           label="Gold"
           themeOption={SiteTheme.GOLD}
+          selectedTheme={siteTheme}
+          setSiteTheme={setSiteTheme}
+          handleClose={handleClose}
+        />
+        <ThemeSelectorButton
+          label="Bronze"
+          themeOption={SiteTheme.BRONZE}
           selectedTheme={siteTheme}
           setSiteTheme={setSiteTheme}
           handleClose={handleClose}
