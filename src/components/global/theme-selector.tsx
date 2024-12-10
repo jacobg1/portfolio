@@ -30,9 +30,7 @@ const themePopoverStyles: SxProps = {
   "& .MuiPopover-paper": {
     width: "100%",
     maxWidth: "330px",
-    padding: "15px 5px",
-    display: "flex",
-    justifyContent: "space-evenly",
+    padding: { xs: "12px 1px", sm: "12px 5px" },
   },
   "& .MuiChip-label": {
     paddingLeft: "25px",
@@ -42,6 +40,15 @@ const themePopoverStyles: SxProps = {
   },
   "& .MuiChip-root": {
     width: "31%",
+  },
+  "& .theme-button-container": {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-evenly",
+  },
+  "& .button-row-2": {
+    margin: "10px 0 0 6px",
+    justifyContent: "flex-start",
   },
 };
 
@@ -66,7 +73,14 @@ export function ThemeSelector(): JSX.Element {
       <Popover
         id={id}
         open={open}
-        sx={themePopoverStyles}
+        sx={(theme) => ({
+          [theme.breakpoints.down(355)]: {
+            "& .MuiPopover-paper": {
+              left: "0 !important",
+            },
+          },
+          ...themePopoverStyles,
+        })}
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
@@ -74,27 +88,38 @@ export function ThemeSelector(): JSX.Element {
           horizontal: "left",
         }}
       >
-        <ThemeSelectorButton
-          label="Silver"
-          themeOption={SiteTheme.SILVER}
-          selectedTheme={siteTheme}
-          setSiteTheme={setSiteTheme}
-          handleClose={handleClose}
-        />
-        <ThemeSelectorButton
-          label="Gold"
-          themeOption={SiteTheme.GOLD}
-          selectedTheme={siteTheme}
-          setSiteTheme={setSiteTheme}
-          handleClose={handleClose}
-        />
-        <ThemeSelectorButton
-          label="Bronze"
-          themeOption={SiteTheme.BRONZE}
-          selectedTheme={siteTheme}
-          setSiteTheme={setSiteTheme}
-          handleClose={handleClose}
-        />
+        <Box className="theme-button-container button-row-1">
+          <ThemeSelectorButton
+            label="Silver"
+            themeOption={SiteTheme.SILVER}
+            selectedTheme={siteTheme}
+            setSiteTheme={setSiteTheme}
+            handleClose={handleClose}
+          />
+          <ThemeSelectorButton
+            label="Gold"
+            themeOption={SiteTheme.GOLD}
+            selectedTheme={siteTheme}
+            setSiteTheme={setSiteTheme}
+            handleClose={handleClose}
+          />
+          <ThemeSelectorButton
+            label="Bronze"
+            themeOption={SiteTheme.BRONZE}
+            selectedTheme={siteTheme}
+            setSiteTheme={setSiteTheme}
+            handleClose={handleClose}
+          />
+        </Box>
+        <Box className="theme-button-container button-row-2">
+          <ThemeSelectorButton
+            label="Classic"
+            themeOption={SiteTheme.CLASSIC}
+            selectedTheme={siteTheme}
+            setSiteTheme={setSiteTheme}
+            handleClose={handleClose}
+          />
+        </Box>
       </Popover>
       <Button
         className="select-theme-button"

@@ -19,7 +19,7 @@ const projectStyles: SxProps = {
     margin: "15px 0 20px",
   },
   "& .MuiTypography-h3": {
-    marginTop: "4px",
+    marginTop: "7px",
     marginRight: "16px",
     justifyContent: "center",
   },
